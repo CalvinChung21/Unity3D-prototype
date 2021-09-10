@@ -4,38 +4,30 @@ using UnityEngine;
 
 public class FlashLight : MonoBehaviour
 {
-    public bool isOn = false;
-    public GameObject lightSource;
-    public AudioSource clickSound;
-    public bool failSafe = false;
-
+    [SerializeField] GameObject FlashlightLight;
+    private bool FlashlightActive = false;
+    [SerializeField] private Camera mainCamera;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fkey"))
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit raycastHit))
         {
-            if(isOn == false && failSafe == false)
+            FlashlightLight.transform.LookAt(raycastHit.point);
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (FlashlightActive == false)
             {
-                failSafe = true;
-                lightSource.SetActive(true);
-                clickSound.Play();
-                isOn = true;
-                StartCoroutine(FailSafe());
+                FlashlightLight.gameObject.SetActive(true);
+                FlashlightActive = true;
             }
-            if(isOn == true && failSafe == false)
+            else
             {
-                failSafe = true;
-                lightSource.SetActive(false);
-                clickSound.Play();
-                isOn = false;
-                StartCoroutine(FailSafe());
+                FlashlightLight.gameObject.SetActive(false);
+                FlashlightActive = false;
             }
         }
     }
 
-    IEnumerator FailSafe()
-    {
-        yield return new WaitForSeconds(0.25f);
-        failSafe = false;
-    }
 }

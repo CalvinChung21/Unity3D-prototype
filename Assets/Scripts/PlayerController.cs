@@ -9,13 +9,22 @@ public class PlayerController : MonoBehaviour
 
     public Transform cameraHolder;
     public float mouseSensitivity = 2f;
-    public float upLimit = -50;
-    public float downLimit = 50;
+
+    void Start()
+    {
+        Cursor.visible = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
         Move();
         Rotate();
+
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     private void Move()
@@ -37,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 currentRotation = cameraHolder.localEulerAngles;
         if (currentRotation.x > 180) currentRotation.x -= 360;
-        currentRotation.x = Mathf.Clamp(currentRotation.x, upLimit, downLimit);
+
         cameraHolder.localRotation = Quaternion.Euler(currentRotation);
     }
 }
