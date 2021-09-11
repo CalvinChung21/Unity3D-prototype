@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +25,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("escape"))
         {
             Application.Quit();
+        }
+        if(characterController.isGrounded == true && characterController.velocity.magnitude > 1f && GetComponent<AudioSource>().isPlaying == false)
+        {
+            GetComponent<AudioSource>().Play();
         }
     }
 

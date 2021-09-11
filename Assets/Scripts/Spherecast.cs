@@ -15,13 +15,13 @@ public class Spherecast : MonoBehaviour
     private Vector3 direction;
 
     private float currentHitDistance;
-
+    private GameObject temp;
     // Update is called once per frame
     void Update()
     {
         origin = transform.position;
         direction = transform.forward;
-        
+        temp = currentHitObject; 
         RaycastHit hit;
         if (Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, layerMask, QueryTriggerInteraction.UseGlobal))
         {
@@ -29,10 +29,19 @@ public class Spherecast : MonoBehaviour
             currentHitDistance = hit.distance;
             if(currentHitObject.tag == "NPC")
             {
-                currentHitObject.GetComponent<NavMeshAgent>().isStopped = true;
-                currentHitObject.GetComponent<Renderer>().material.color = Color.blue;
-                currentHitObject.GetComponent<AudioSource>().Play();
-                StartCoroutine(ExecuteAfterTime(4, currentHitObject));
+                currentHitObject.GetComponent<Renderer>().material.color = Color.yellow;
+                if (currentHitObject.GetComponent<NPCMove>().health > 0)
+                {
+                    currentHitObject.GetComponent<NPCMove>().health -= 7 / currentHitDistance;
+                }
+                if(temp != null)
+                {
+                    if (temp != currentHitObject && temp.CompareTag("NPC"))
+                    {
+                        temp.GetComponent<Renderer>().material.color = Color.red;
+                    }
+                }
+                
             }
         }
         else
@@ -47,13 +56,5 @@ public class Spherecast : MonoBehaviour
         Gizmos.color = Color.red;
         Debug.DrawLine(origin, origin + direction * currentHitDistance);
         Gizmos.DrawWireSphere(origin + direction * currentHitDistance, sphereRadius);
-    }
-
-    IEnumerator ExecuteAfterTime(float time, GameObject gameObject)
-    {
-        yield return new WaitForSeconds(time);
-
-        gameObject.GetComponent<NavMeshAgent>().isStopped = false;
-        gameObject.GetComponent<Renderer>().material.color = Color.red;
     }
 }
