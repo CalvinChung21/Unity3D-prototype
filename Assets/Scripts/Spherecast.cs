@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Spherecast : MonoBehaviour
 {
-    public GameObject currentHitObject;
+    public static GameObject currentHitObject;
 
     public float sphereRadius;
     public float maxDistance;
@@ -15,33 +15,41 @@ public class Spherecast : MonoBehaviour
     private Vector3 direction;
 
     private float currentHitDistance;
-    private GameObject temp;
     // Update is called once per frame
     void Update()
     {
-        origin = transform.position;
-        direction = transform.forward;
-        temp = currentHitObject; 
-        RaycastHit hit;
-        if (Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, layerMask, QueryTriggerInteraction.UseGlobal))
+        // only do spherecast when the flashlight is on
+        if (FlashLightToggle.flashLightStatus())
         {
-            currentHitObject = hit.transform.gameObject;
-            currentHitDistance = hit.distance;
-            if(currentHitObject.tag == "NPC")
+            // get the current game object's position and direction
+            origin = transform.position;
+            direction = transform.forward;
+
+            // using spherecast to raycast and get the info about the object being hit
+            RaycastHit hit;
+            if (Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, layerMask, QueryTriggerInteraction.UseGlobal))
             {
-                currentHitObject.GetComponent<Renderer>().material.color = Color.yellow;
-                if (currentHitObject.GetComponent<NPCMove>().health > 0)
+                currentHitObject = hit.transform.gameObject;
+                currentHitDistance = hit.distance;
+                // if the object being hit is NPC,
+                if (currentHitObject.tag == "NPC")
                 {
-                    currentHitObject.GetComponent<NPCMove>().health -= 7 / currentHitDistance;
-                }
-                if(temp != null)
-                {
-                    if (temp != currentHitObject && temp.CompareTag("NPC"))
+                    if (currentHitObject.GetComponent<NPCMove>().health > 0 && GetComponent<Light>().color == Color.red)
                     {
-                        temp.GetComponent<Renderer>().material.color = Color.red;
+                        currentHitObject.GetComponent<Renderer>().material.color = Color.yellow;
+                        currentHitObject.GetComponent<NPCMove>().health--;
+                    }
+                    else if (GetComponent<Light>().color == Color.white)
+                    {
+                        currentHitObject.GetComponent<Renderer>().material.color = Color.blue;
+                        currentHitObject.GetComponent<NavMeshAgent>().isStopped = true;
                     }
                 }
-                
+            }
+            else
+            {
+                currentHitDistance = maxDistance;
+                currentHitObject = null;
             }
         }
         else
@@ -56,5 +64,10 @@ public class Spherecast : MonoBehaviour
         Gizmos.color = Color.red;
         Debug.DrawLine(origin, origin + direction * currentHitDistance);
         Gizmos.DrawWireSphere(origin + direction * currentHitDistance, sphereRadius);
+    }
+
+    public static GameObject getCurrentHitObject()
+    {
+        return currentHitObject;
     }
 }

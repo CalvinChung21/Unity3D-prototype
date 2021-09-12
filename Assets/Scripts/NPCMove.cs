@@ -10,7 +10,6 @@ public class NPCMove : MonoBehaviour
     Transform _destination;
 
     NavMeshAgent _navMeshAgent;
-    public GameObject NPC;
 
     public float health;
     public float maxHealth;
@@ -21,6 +20,15 @@ public class NPCMove : MonoBehaviour
     {
         health = maxHealth;
         slider.value = CalculateHealth();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            HealthBarFade.Damage();
+            SoundManagerScript.playSound("ah");
+        }
     }
 
     private void Update()
@@ -36,17 +44,12 @@ public class NPCMove : MonoBehaviour
             SetDestination();
         }
 
-        if(_navMeshAgent.isStopped == true)
+        if(_navMeshAgent.isStopped == true && health > 0)
         {
-            NPC.GetComponent<Renderer>().material.color = Color.blue;
-            health++;
-        }
-
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-            _navMeshAgent.isStopped = false;
-            NPC.GetComponent<Renderer>().material.color = Color.red;
+            if(Spherecast.getCurrentHitObject() != null && Spherecast.getCurrentHitObject().name != gameObject.name)
+            {
+                StartCoroutine(recoverFromStop(3));
+            }
         }
 
         slider.value = CalculateHealth();
@@ -62,16 +65,8 @@ public class NPCMove : MonoBehaviour
 
         if (health <= 0)
         {
-            _navMeshAgent.isStopped = true;
+            Destroy(gameObject);
             SoundManagerScript.playSound("NPC");
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.name == "Player")
-        {
-            Debug.Log("hit the player!");
         }
     }
 
@@ -86,6 +81,16 @@ public class NPCMove : MonoBehaviour
         {
             Vector3 targetVector = _destination.transform.position;
             _navMeshAgent.SetDestination(targetVector);
+        }
+    }
+
+    IEnumerator recoverFromStop(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if (_navMeshAgent != null)
+        {
+            _navMeshAgent.isStopped = false;
+            GetComponent<Renderer>().material.color = Color.red;
         }
     }
 }
