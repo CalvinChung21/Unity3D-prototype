@@ -16,8 +16,12 @@ public class NPCMove : MonoBehaviour
     public GameObject healthBarUI;
     public Slider slider;
 
+    public delegate void EnemyKilled();
+    public static event EnemyKilled OnEnemyKilled;
+
     private void Start()
     {
+        _destination = GameObject.Find("FirstPersonCharacter").GetComponent<Transform>();
         health = maxHealth;
         slider.value = CalculateHealth();
     }
@@ -33,6 +37,17 @@ public class NPCMove : MonoBehaviour
 
     private void Update()
     {
+        navMeshSetup();
+
+        attacked();
+
+        healthBar();
+
+        die();
+    }
+
+    void navMeshSetup()
+    {
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
         if (_navMeshAgent == null)
@@ -43,45 +58,22 @@ public class NPCMove : MonoBehaviour
         {
             SetDestination();
         }
-
-        if(_navMeshAgent.isStopped == true && health > 0)
-        {
-            if(Spherecast.getCurrentHitObject() != null && Spherecast.getCurrentHitObject().name != gameObject.name)
-            {
-                StartCoroutine(recoverFromStop(3));
-            }
-        }
-
-        slider.value = CalculateHealth();
-
-        if (health < maxHealth)
-        {
-            healthBarUI.SetActive(true);
-        }
-        else
-        {
-            healthBarUI.SetActive(false);
-        }
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-            SoundManagerScript.playSound("NPC");
-        }
-    }
-
-    float CalculateHealth()
-    {
-        return health / maxHealth;
     }
 
     private void SetDestination()
     {
-        if(_destination != null)
+
+        if (GameObject.Find("Decoy(Clone)") != null)
         {
-            Vector3 targetVector = _destination.transform.position;
-            _navMeshAgent.SetDestination(targetVector);
+            _destination = GameObject.Find("Decoy(Clone)").GetComponent<Transform>();
         }
+        else if (_destination == null)
+        {
+            _destination = GameObject.Find("FirstPersonCharacter").GetComponent<Transform>();
+        }
+        Vector3 targetVector = _destination.transform.position;
+        _navMeshAgent.SetDestination(targetVector);
+        
     }
 
     IEnumerator recoverFromStop(int seconds)
@@ -93,4 +85,46 @@ public class NPCMove : MonoBehaviour
             GetComponent<Renderer>().material.color = Color.red;
         }
     }
+
+    void attacked()
+    {
+        if (_navMeshAgent.isStopped == true && health > 0)
+        {
+            if ((Spherecast.getCurrentHitObject() != null && Spherecast.getCurrentHitObject().name != gameObject.name) || FlashLightToggle.flashLightStatus() == false)
+            {
+                StartCoroutine(recoverFromStop(3));
+            }
+        }
+    }
+    float CalculateHealth()
+    {
+        return health / maxHealth;
+    }
+    void healthBar()
+    {
+        slider.value = CalculateHealth();
+        if (health < maxHealth)
+        {
+            healthBarUI.SetActive(true);
+        }
+        else
+        {
+            healthBarUI.SetActive(false);
+        }
+    }
+
+    void die()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            SoundManagerScript.playSound("NPC");
+            if (OnEnemyKilled != null)
+            {
+                OnEnemyKilled();
+            }
+        }
+        
+    }
+
 }

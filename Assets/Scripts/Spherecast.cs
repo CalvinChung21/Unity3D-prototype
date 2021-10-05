@@ -44,6 +44,10 @@ public class Spherecast : MonoBehaviour
                         currentHitObject.GetComponent<Renderer>().material.color = Color.blue;
                         currentHitObject.GetComponent<NavMeshAgent>().isStopped = true;
                     }
+                }else if(currentHitObject.tag == "HelloGuy")
+                {
+                    Destroy(currentHitObject);
+                    SoundManagerScript.playSound("haha");
                 }
             }
             else
