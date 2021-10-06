@@ -7,7 +7,7 @@ public class DecoyThrower : MonoBehaviour
     // reference code from https://www.youtube.com/watch?v=BYL6JtUdEY0
     public float throwForce = 40f;
     public GameObject decoyPrefab;
-    public int decoyNum = 4;
+    public static int decoyNum = 4;
 
     // Update is called once per frame
     void Update()

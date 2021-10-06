@@ -37,7 +37,7 @@ public class Spherecast : MonoBehaviour
                     if (currentHitObject.GetComponent<NPCMove>().health > 0 && GetComponent<Light>().color == Color.red)
                     {
                         currentHitObject.GetComponent<Renderer>().material.color = Color.yellow;
-                        currentHitObject.GetComponent<NPCMove>().health--;
+                        currentHitObject.GetComponent<NPCMove>().health-=5;
                     }
                     else if (GetComponent<Light>().color == Color.white)
                     {

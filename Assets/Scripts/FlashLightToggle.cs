@@ -19,10 +19,14 @@ public class FlashLightToggle : MonoBehaviour
     private bool flashlightMode;
 
     public Slider slider;
+    public Text numText;
+
 
     // Update is called once per frame
     void Update()
     {
+        numText.text = "Notes: "+notesNum+ " Decoy: " + DecoyThrower.decoyNum;
+
         if (FlashlightLight.activeSelf == true)
         {
             slider.value = _currentBatteries;

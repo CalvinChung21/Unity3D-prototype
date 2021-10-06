@@ -9,8 +9,10 @@ public class RandomTimeSpawner : MonoBehaviour
     public GameObject spawnObject;
     private GameObject currentObject;
 
-    public float maxTime = 2500;
-    public float minTime = 2000;
+    private Vector3 SpawnTransform;
+
+    public float maxTime = 120;
+    public float minTime = 60;
 
     //current time
     private float time;
@@ -44,7 +46,10 @@ public class RandomTimeSpawner : MonoBehaviour
     void SpawnObject()
     {
         time = 0;
-        currentObject = Instantiate(spawnObject, transform.position, spawnObject.transform.rotation);
+        SpawnTransform.x = transform.position.x + Random.Range(-5, 5);
+        SpawnTransform.y = transform.position.y;
+        SpawnTransform.z = transform.position.z + Random.Range(-5, 5);
+        currentObject = Instantiate(spawnObject, SpawnTransform, spawnObject.transform.rotation);
         SoundManagerScript.playSound("hello");
         StartCoroutine(SelfDestruct(currentObject));
     }
