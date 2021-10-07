@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class LightSeeker: MonoBehaviour
 {
     [SerializeField]
     Transform _destination;
+
+    Transform _temp;
 
     NavMeshAgent _navMeshAgent;
 

@@ -50,7 +50,6 @@ public class RandomTimeSpawner : MonoBehaviour
         SpawnTransform.y = transform.position.y;
         SpawnTransform.z = transform.position.z + Random.Range(-5, 5);
         currentObject = Instantiate(spawnObject, SpawnTransform, spawnObject.transform.rotation);
-        SoundManagerScript.playSound("hello");
         StartCoroutine(SelfDestruct(currentObject));
     }
 

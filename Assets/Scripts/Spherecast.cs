@@ -36,12 +36,10 @@ public class Spherecast : MonoBehaviour
                 {
                     if (currentHitObject.GetComponent<NPCMove>().health > 0 && GetComponent<Light>().color == Color.red)
                     {
-                        currentHitObject.GetComponent<Renderer>().material.color = Color.yellow;
                         currentHitObject.GetComponent<NPCMove>().health-=5;
                     }
                     else if (GetComponent<Light>().color == Color.white)
                     {
-                        currentHitObject.GetComponent<Renderer>().material.color = Color.blue;
                         currentHitObject.GetComponent<NavMeshAgent>().isStopped = true;
                     }
                 }else if(currentHitObject.tag == "HelloGuy")

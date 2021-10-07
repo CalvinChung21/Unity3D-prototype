@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class NPCMove : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class NPCMove : MonoBehaviour
         _destination = GameObject.Find("FirstPersonCharacter").GetComponent<Transform>();
         health = maxHealth;
         slider.value = CalculateHealth();
+        navMeshSetup();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -58,6 +60,7 @@ public class NPCMove : MonoBehaviour
         {
             SetDestination();
         }
+
     }
 
     private void SetDestination()
@@ -73,7 +76,6 @@ public class NPCMove : MonoBehaviour
         }
         Vector3 targetVector = _destination.transform.position;
         _navMeshAgent.SetDestination(targetVector);
-        
     }
 
     IEnumerator recoverFromStop(int seconds)
@@ -82,7 +84,6 @@ public class NPCMove : MonoBehaviour
         if (_navMeshAgent != null)
         {
             _navMeshAgent.isStopped = false;
-            GetComponent<Renderer>().material.color = Color.red;
         }
     }
 

@@ -25,7 +25,7 @@ public class FlashLightToggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        numText.text = "Notes: "+notesNum+ " Decoy: " + DecoyThrower.decoyNum;
+        numText.text = "Hopeless: " + Hopeless.countHopeless + " Notes: " +notesNum+  " Decoy: " + DecoyThrower.decoyNum;
 
         if (FlashlightLight.activeSelf == true)
         {

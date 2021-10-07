@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HealthBarFade : MonoBehaviour
 {
+    // reference code from https://www.youtube.com/watch?v=cR8jP8OGbhM
     private const float DAMAGED_HEALTH_FADE_TIMER_MAX = 1f;
     private static Image barImage;
     private static Image damagedBarImage;
@@ -61,6 +62,12 @@ public class HealthBarFade : MonoBehaviour
             damagedBarImage.color = damagedColor;
             damagedHealthFadeTimer = DAMAGED_HEALTH_FADE_TIMER_MAX;
         }
+        SetHealth(healthSystem.GetHealthNormalized());
+    }
+
+    public static void Heal()
+    {
+        healthSystem.Heal(10);
         SetHealth(healthSystem.GetHealthNormalized());
     }
 }

@@ -11,10 +11,10 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip ah;
     public static AudioClip grab;
     public static AudioClip throwDecoy;
-    public static AudioClip hello;
     public static AudioClip haha;
     public static AudioClip evilLaugh;
     public static AudioClip thank;
+    public static AudioClip heal;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -26,10 +26,10 @@ public class SoundManagerScript : MonoBehaviour
         ah = Resources.Load<AudioClip>("ah");
         grab = Resources.Load<AudioClip>("grab");
         throwDecoy = Resources.Load<AudioClip>("throw");
-        hello = Resources.Load<AudioClip>("hello");
         haha = Resources.Load<AudioClip>("haha");
         evilLaugh = Resources.Load<AudioClip>("evilLaugh");
         thank = Resources.Load<AudioClip>("thank");
+        heal = Resources.Load<AudioClip>("heal");
         audioSrc = GetComponent<AudioSource>();
     }
 
@@ -43,10 +43,10 @@ public class SoundManagerScript : MonoBehaviour
             case "ah": audioSrc.PlayOneShot(ah);break;
             case "grab": audioSrc.PlayOneShot(grab); break;
             case "throw": audioSrc.PlayOneShot(throwDecoy); break;
-            case "hello": audioSrc.PlayOneShot(hello); break;
             case "haha": audioSrc.PlayOneShot(haha); break;
             case "evilLaugh": audioSrc.PlayOneShot(evilLaugh); break;
             case "thank": audioSrc.PlayOneShot(thank); break;
+            case "heal": audioSrc.PlayOneShot(heal); break;
             default:break;
         }
     }

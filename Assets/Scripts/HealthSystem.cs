@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
+    // reference code from https://www.youtube.com/watch?v=cR8jP8OGbhM
     public event EventHandler OnDamaged;
     public event EventHandler OnHealed;
 
