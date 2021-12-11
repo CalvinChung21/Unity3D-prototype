@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714015162712264638}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2716898446890330536}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717316998528268950}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714136444671643618}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2717016414025820548}
   - component: {fileID: 2617703381017149600}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: man02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714077198369518696}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717299393310638838}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714005303328816902}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714172023561341758}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717196165652320862}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717043249878403608}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717210873066796504}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717351508642228132}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714129569097048792}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717072006357424476}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714268769153814280}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714093323786703332}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717341271258507180}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714031129318858742}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714014958594379082}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717206948276624034}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714450625054181060}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714412443526814674}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714523292651390526}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GenericRig_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 6487153913790943562}
   - component: {fileID: 5947252185095314903}
   - component: {fileID: -6975210424772291951}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Hopeless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,7 +938,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4921349734877015081}
   - component: {fileID: 6629968553207690110}
-  m_Layer: 0
+  - component: {fileID: 2169722618337454175}
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,3 +1022,16 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &2169722618337454175
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271697181256089261}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 6, y: 1.83, z: 6}
+  m_Center: {x: 0, y: -0.96, z: 0}
