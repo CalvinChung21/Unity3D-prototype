@@ -30,7 +30,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		bool m_Crouching;
 
 
-		void Awake()
+		void Start()
 		{
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();

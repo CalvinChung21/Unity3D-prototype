@@ -1,68 +1,176 @@
 fileFormatVersion: 2
 guid: 59424e853354a494db53140ae5fb21a6
-timeCreated: 1508680096
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: GenericRig_Head
-    100002: GenericRig_Hips
-    100004: GenericRig_LeftArm
-    100006: GenericRig_LeftFoot
-    100008: GenericRig_LeftForeArm
-    100010: GenericRig_LeftHand
-    100012: GenericRig_LeftLeg
-    100014: GenericRig_LeftShoulder
-    100016: GenericRig_LeftToeBase
-    100018: GenericRig_LeftUpLeg
-    100020: GenericRig_Neck
-    100022: GenericRig_RightArm
-    100024: GenericRig_RightFoot
-    100026: GenericRig_RightForeArm
-    100028: GenericRig_RightHand
-    100030: GenericRig_RightLeg
-    100032: GenericRig_RightShoulder
-    100034: GenericRig_RightToeBase
-    100036: GenericRig_RightUpLeg
-    100038: GenericRig_Spine
-    100040: GenericRig_Spine1
-    100042: GenericRig_Spine2
-    100044: //RootNode
-    100046: GenericRig_Reference
-    100048: kid
-    400000: GenericRig_Head
-    400002: GenericRig_Hips
-    400004: GenericRig_LeftArm
-    400006: GenericRig_LeftFoot
-    400008: GenericRig_LeftForeArm
-    400010: GenericRig_LeftHand
-    400012: GenericRig_LeftLeg
-    400014: GenericRig_LeftShoulder
-    400016: GenericRig_LeftToeBase
-    400018: GenericRig_LeftUpLeg
-    400020: GenericRig_Neck
-    400022: GenericRig_RightArm
-    400024: GenericRig_RightFoot
-    400026: GenericRig_RightForeArm
-    400028: GenericRig_RightHand
-    400030: GenericRig_RightLeg
-    400032: GenericRig_RightShoulder
-    400034: GenericRig_RightToeBase
-    400036: GenericRig_RightUpLeg
-    400038: GenericRig_Spine
-    400040: GenericRig_Spine1
-    400042: GenericRig_Spine2
-    400044: //RootNode
-    400046: GenericRig_Reference
-    400048: kid
-    4300000: kid
-    7400000: Idle_2
-    9500000: //RootNode
-    13700000: kid
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: GenericRig_Head
+  - first:
+      1: 100002
+    second: GenericRig_Hips
+  - first:
+      1: 100004
+    second: GenericRig_LeftArm
+  - first:
+      1: 100006
+    second: GenericRig_LeftFoot
+  - first:
+      1: 100008
+    second: GenericRig_LeftForeArm
+  - first:
+      1: 100010
+    second: GenericRig_LeftHand
+  - first:
+      1: 100012
+    second: GenericRig_LeftLeg
+  - first:
+      1: 100014
+    second: GenericRig_LeftShoulder
+  - first:
+      1: 100016
+    second: GenericRig_LeftToeBase
+  - first:
+      1: 100018
+    second: GenericRig_LeftUpLeg
+  - first:
+      1: 100020
+    second: GenericRig_Neck
+  - first:
+      1: 100022
+    second: GenericRig_RightArm
+  - first:
+      1: 100024
+    second: GenericRig_RightFoot
+  - first:
+      1: 100026
+    second: GenericRig_RightForeArm
+  - first:
+      1: 100028
+    second: GenericRig_RightHand
+  - first:
+      1: 100030
+    second: GenericRig_RightLeg
+  - first:
+      1: 100032
+    second: GenericRig_RightShoulder
+  - first:
+      1: 100034
+    second: GenericRig_RightToeBase
+  - first:
+      1: 100036
+    second: GenericRig_RightUpLeg
+  - first:
+      1: 100038
+    second: GenericRig_Spine
+  - first:
+      1: 100040
+    second: GenericRig_Spine1
+  - first:
+      1: 100042
+    second: GenericRig_Spine2
+  - first:
+      1: 100044
+    second: //RootNode
+  - first:
+      1: 100046
+    second: GenericRig_Reference
+  - first:
+      1: 100048
+    second: kid
+  - first:
+      4: 400000
+    second: GenericRig_Head
+  - first:
+      4: 400002
+    second: GenericRig_Hips
+  - first:
+      4: 400004
+    second: GenericRig_LeftArm
+  - first:
+      4: 400006
+    second: GenericRig_LeftFoot
+  - first:
+      4: 400008
+    second: GenericRig_LeftForeArm
+  - first:
+      4: 400010
+    second: GenericRig_LeftHand
+  - first:
+      4: 400012
+    second: GenericRig_LeftLeg
+  - first:
+      4: 400014
+    second: GenericRig_LeftShoulder
+  - first:
+      4: 400016
+    second: GenericRig_LeftToeBase
+  - first:
+      4: 400018
+    second: GenericRig_LeftUpLeg
+  - first:
+      4: 400020
+    second: GenericRig_Neck
+  - first:
+      4: 400022
+    second: GenericRig_RightArm
+  - first:
+      4: 400024
+    second: GenericRig_RightFoot
+  - first:
+      4: 400026
+    second: GenericRig_RightForeArm
+  - first:
+      4: 400028
+    second: GenericRig_RightHand
+  - first:
+      4: 400030
+    second: GenericRig_RightLeg
+  - first:
+      4: 400032
+    second: GenericRig_RightShoulder
+  - first:
+      4: 400034
+    second: GenericRig_RightToeBase
+  - first:
+      4: 400036
+    second: GenericRig_RightUpLeg
+  - first:
+      4: 400038
+    second: GenericRig_Spine
+  - first:
+      4: 400040
+    second: GenericRig_Spine1
+  - first:
+      4: 400042
+    second: GenericRig_Spine2
+  - first:
+      4: 400044
+    second: //RootNode
+  - first:
+      4: 400046
+    second: GenericRig_Reference
+  - first:
+      4: 400048
+    second: kid
+  - first:
+      43: 4300000
+    second: kid
+  - first:
+      74: 7400000
+    second: Idle_2
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: kid
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -75,16 +183,20 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Idle_2
       takeName: Take 001
+      internalID: 0
       firstFrame: 1
       lastFrame: 120
       wrapMode: 0
@@ -166,28 +278,172 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Idle_2(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GenericRig_Reference
+      parentName: Idle_2(Clone)
+      position: {x: -0.005438328, y: -0.000022453698, z: -0.033413954}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GenericRig_Hips
+      parentName: GenericRig_Reference
+      position: {x: 0.00739551, y: 0.8014757, z: 0.039375626}
+      rotation: {x: 0.49969327, y: -0.50030655, z: -0.49969327, w: 0.50030655}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: GenericRig_LeftUpLeg
+      parentName: GenericRig_Hips
+      position: {x: -0.0017432817, y: -0.0022737673, z: 0.11911155}
+      rotation: {x: -0, y: -0, z: -0.9999998, w: -0.0006132722}
+      scale: {x: 0.9999999, y: 0.9999997, z: 0.9999999}
+    - name: GenericRig_LeftLeg
+      parentName: GenericRig_LeftUpLeg
+      position: {x: -0.35366294, y: -0.0000028123, z: -0.0000004204232}
+      rotation: {x: 0, y: -0, z: -0, w: -1}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000005}
+    - name: GenericRig_LeftFoot
+      parentName: GenericRig_LeftLeg
+      position: {x: -0.34646136, y: 0.00000019330278, z: -0.000000044361446}
+      rotation: {x: 0.000000089525756, y: -0.00000019366024, z: -0.34502634, w: -0.93859303}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999994}
+    - name: GenericRig_LeftToeBase
+      parentName: GenericRig_LeftFoot
+      position: {x: -0.10457258, y: -0.000000029078718, z: 0.00000006105345}
+      rotation: {x: 0.000000038243996, y: 0.000000017713104, z: -0.000000059604616, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000004}
+    - name: GenericRig_RightUpLeg
+      parentName: GenericRig_Hips
+      position: {x: -0.0017432423, y: -0.0022737503, z: -0.11911152}
+      rotation: {x: -0, y: -0, z: -0.0006083846, w: 0.9999998}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GenericRig_RightLeg
+      parentName: GenericRig_RightUpLeg
+      position: {x: 0.3536627, y: -0.0000037368181, z: -0.00000094065433}
+      rotation: {x: -0, y: -0, z: 0.000004887522, w: -1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000001}
+    - name: GenericRig_RightFoot
+      parentName: GenericRig_RightLeg
+      position: {x: 0.3464616, y: -0.00000012695826, z: 0.00000006018195}
+      rotation: {x: 0.000009373628, y: -0.00002559445, z: -0.34502637, w: -0.938593}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: GenericRig_RightToeBase
+      parentName: GenericRig_RightFoot
+      position: {x: 0.10457258, y: 0.000000024212106, z: -0.0000000073827873}
+      rotation: {x: -0, y: -0, z: 2.3991287e-10, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: GenericRig_Spine
+      parentName: GenericRig_Hips
+      position: {x: -0.09791999, y: -0.000000022248186, z: -0.0000000035946552}
+      rotation: {x: -0.000000029802322, y: -0.000000029802322, z: -0.037405133, w: 0.99930024}
+      scale: {x: 0.99999976, y: 0.99999976, z: 0.9999998}
+    - name: GenericRig_Spine1
+      parentName: GenericRig_Spine
+      position: {x: -0.09744093, y: -0.000000010229289, z: 0.000000007187333}
+      rotation: {x: 0.000000028666703, y: 0.000000030896228, z: -0.00000010803342, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: GenericRig_Spine2
+      parentName: GenericRig_Spine1
+      position: {x: -0.09744093, y: 0.0000000093569845, z: 0.000000010765584}
+      rotation: {x: -0, y: -0, z: -0.028200027, w: 0.9996024}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: GenericRig_LeftShoulder
+      parentName: GenericRig_Spine2
+      position: {x: -0.21985906, y: -0.050889667, z: 0.11107933}
+      rotation: {x: -0.53142333, y: 0.4664647, z: 0.53142333, w: 0.4664646}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: GenericRig_LeftArm
+      parentName: GenericRig_LeftShoulder
+      position: {x: -0.16661905, y: 0.0000000060677983, z: -2.1466562e-10}
+      rotation: {x: 0.70710677, y: -0.00000005960463, z: -0, w: 0.70710677}
+      scale: {x: 1, y: 1.0000007, z: 1.0000011}
+    - name: GenericRig_LeftForeArm
+      parentName: GenericRig_LeftArm
+      position: {x: -0.46613818, y: 0.0000000050864415, z: 0.00000013937489}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000002}
+    - name: GenericRig_LeftHand
+      parentName: GenericRig_LeftForeArm
+      position: {x: -0.25186932, y: -0.000000024075916, z: 0.0000001346152}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000005}
+    - name: GenericRig_RightShoulder
+      parentName: GenericRig_Spine2
+      position: {x: -0.21985899, y: -0.050889652, z: -0.1110793}
+      rotation: {x: 0.46646467, y: 0.53142333, z: -0.46646467, w: 0.5314233}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000006}
+    - name: GenericRig_RightArm
+      parentName: GenericRig_RightShoulder
+      position: {x: 0.16661899, y: -0.000000009849535, z: 0.0000000018108975}
+      rotation: {x: -0.7071067, y: 0.000000005587934, z: -0.00000003166496, w: -0.70710677}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000007}
+    - name: GenericRig_RightForeArm
+      parentName: GenericRig_RightArm
+      position: {x: 0.46613845, y: 0.00000015356825, z: 0.000000026326235}
+      rotation: {x: 0.00000005960463, y: 0.000000003951264, z: -0.000000046098105, w: 1}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: GenericRig_RightHand
+      parentName: GenericRig_RightForeArm
+      position: {x: 0.25186926, y: -0.000000033190215, z: -0.00000030521917}
+      rotation: {x: -0.00000005960463, y: -0.0000000039512646, z: 0.000000048732282, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: GenericRig_Neck
+      parentName: GenericRig_Spine2
+      position: {x: -0.25437233, y: -0.00000006178015, z: 0.00000001313783}
+      rotation: {x: -0.000000027784035, y: -0.00000003169235, z: -0.012402086, w: 0.99992317}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000005}
+    - name: GenericRig_Head
+      parentName: GenericRig_Neck
+      position: {x: -0.092520334, y: 0.0000000715848, z: -0.0000000032014198}
+      rotation: {x: -0.000000054777683, y: -0.00000006406898, z: 0.000000047497444, w: -1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: kid
+      parentName: Idle_2(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -195,14 +451,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

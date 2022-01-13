@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -26,7 +25,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
-        [SerializeField] private List<AudioClip> m_FootstepSounds = new List<AudioClip>();    // an array of footstep sounds that will be randomly selected from.
+        [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
@@ -132,7 +131,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
 
-            //m_MouseLook.UpdateCursorLock();
+            m_MouseLook.UpdateCursorLock();
         }
 
 
@@ -170,7 +169,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             // pick & play a random footstep sound from the array,
             // excluding sound at index 0
-            int n = Random.Range(1, m_FootstepSounds.Count);
+            int n = Random.Range(1, m_FootstepSounds.Length);
             m_AudioSource.clip = m_FootstepSounds[n];
             m_AudioSource.PlayOneShot(m_AudioSource.clip);
             // move picked sound to index 0 so it's not picked next time
