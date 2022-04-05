@@ -7,6 +7,8 @@ TagManager:
   - NPC
   - Glowstick
   - HelloGuy
+  - fist
+  - Disappear
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - SafeArea
   - Player
   - Glow
-  - 
-  - 
+  - PostProcessing
+  - Unwalkable
   - 
   - 
   - 
