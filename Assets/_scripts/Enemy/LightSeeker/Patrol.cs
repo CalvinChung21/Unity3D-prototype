@@ -12,9 +12,12 @@ public class Patrol : MonoBehaviour
     public Transform[] moveSpots;
     private int randomSpot;
 
+    public static bool patrolOn = true;
+
     // Start is called before the first frame update
     void Start()
     {
+        moveSpots = GameObject.Find("MoveSpots").GetComponentsInChildren<Transform>();
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpots.Length);
     }
@@ -22,18 +25,21 @@ public class Patrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
-
-        if(Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
+        if (patrolOn)
         {
-            if(waitTime <= 0)
+            transform.position = Vector3.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
+
+            if(Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
             {
-                randomSpot = Random.Range(0, moveSpots.Length);
-                waitTime = startWaitTime;
-            }
-            else
-            {
-                waitTime -= Time.deltaTime;
+                if(waitTime <= 0)
+                {
+                    randomSpot = Random.Range(0, moveSpots.Length);
+                    waitTime = startWaitTime;
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
             }
         }
     }

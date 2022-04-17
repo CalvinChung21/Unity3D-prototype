@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSystem : MonoBehaviour
+public class HealthSystem
 {
     // reference code from https://www.youtube.com/watch?v=cR8jP8OGbhM
     public event EventHandler OnDamaged;

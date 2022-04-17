@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014719540199420896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6009720941157258742}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6009865192555054792}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6009880641306221554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014813056025111994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014734368641508264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014719881819173140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014570025140821638}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6009622130743141634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014989360410882902}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014882289574738586}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 5925272938261315266}
   - component: {fileID: 813756679326746469}
   - component: {fileID: 1190084344868518365}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hello Guy
   m_TagString: HelloGuy
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014945884021750368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014850152936908684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6010045690398549756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014593551659153248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6010025531625467392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,7 +646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6009611237295584838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014558761195844540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6009847554898443944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014798309286185014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6014725069918585688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6009901042461776890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6010041609401092486}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GenericRig_LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,6 +904,10 @@ PrefabInstance:
     - target: {fileID: 867114959525405049, guid: 451af9e2396bde047a9b9a0760db5281, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042503820982554539, guid: 451af9e2396bde047a9b9a0760db5281, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1042503820982554539, guid: 451af9e2396bde047a9b9a0760db5281, type: 3}
       propertyPath: m_IsActive

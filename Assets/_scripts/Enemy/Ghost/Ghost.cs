@@ -1,31 +1,30 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UI;
 
 namespace CommandPattern
 {
     public class Ghost : MonoBehaviour
     {
-        // Event system
         public delegate void EnemyKilled();
         public static event EnemyKilled OnEnemyKilled;
         
-        // the animation of hit will trigger the event of activateFist and deactivateFist
         public GameObject m_RightFist;
-        
+        // the animation of hit will trigger the event of activateFist and deactivateFist
         public void activateFist()
         {
-            m_RightFist.GetComponent<Collider>().enabled = true;
+            m_RightFist.GetComponent<SphereCollider>().enabled = true;
         }
         public void deactivateFist()
         {
-            m_RightFist.GetComponent<Collider>().enabled = false;
+            m_RightFist.GetComponent<SphereCollider>().enabled = false;
         }
-        
-        [SerializeField]
-        Transform _destination;
-        NavMeshAgent _navMeshAgent;
-        
+
+        public bool stopPathFinding;
+
         [SerializeField] Animator _animator;
         
         // code reference from https://www.youtube.com/watch?v=ZYeXmze5gxg
@@ -33,58 +32,38 @@ namespace CommandPattern
         public float maxHealth;
         public GameObject healthBarUI;
         public Slider slider;
-        
-        private void Start()
+
+        private void Awake()
         {
             health = maxHealth;
             slider.value = CalculateHealth();
             _animator = this.GetComponent<Animator>();
-            _navMeshAgent = this.GetComponent<NavMeshAgent>();
-            _destination = gameObject.transform;
-        }
-
-        private void Update()
-        {
-            navMeshSetup();
-
-            healthBar();
-
-            die();
+            stopPathFinding = false;
         }
         
-        private void navMeshSetup()
+        private void Update()
         {
-            _navMeshAgent = this.GetComponent<NavMeshAgent>();
-    
-            if (_navMeshAgent == null)
-            {
-                Debug.LogError("The nav mesh agent component is not attached to " + gameObject.name);
-            }
-            else
-            {
-                SetDestination();
-            }
-        }
-
-        private void SetDestination()
-        {
-            // find decoy first, if not then player, if not then stay at the game object's own position
-            if (GameObject.Find("Decoy(Clone)") != null)
-                _destination = GameObject.Find("Decoy(Clone)").GetComponent<Transform>();
-            else if (GameObject.Find("FirstPersonCharacter")!=null)
-                _destination = GameObject.Find("FirstPersonCharacter").GetComponent<Transform>();
-            else
-                _destination = gameObject.transform;
-            
-            // set the target destination
-            Vector3 targetVector = _destination.transform.position;
-            _navMeshAgent.SetDestination(targetVector);
+            healthBar();
             
             // play attack animation when near the player
-            if (Vector3.Distance(gameObject.transform.position, targetVector) < 4f)
+            if (Vector3.Distance(gameObject.transform.position, GameObject.Find("FPSController").transform.position) < 4f)
                 _animator.SetBool("Attack", true);
             else
                 _animator.SetBool("Attack", false);
+
+            if (stopPathFinding)
+            {
+                StartCoroutine(recoverFromStopState());
+            }
+            
+            die();
+        }
+
+        IEnumerator recoverFromStopState()
+        {
+            yield return new WaitForSeconds(5);
+            stopPathFinding = false;
+            _animator.SetBool("Hit", false);
         }
 
         float CalculateHealth()

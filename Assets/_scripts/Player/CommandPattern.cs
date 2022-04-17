@@ -15,13 +15,16 @@ namespace CommandPattern
             {
                 light.SetActive(true);
                 FlashLightToggle.FlashlightActive = true;
+                Patrol.patrolOn = false;
             }
             else
             {
                 light.SetActive(false);
                 FlashLightToggle.FlashlightActive = false;
+                Patrol.patrolOn = true;
             }
             SoundManager.PlaySound(SoundManager.Sound.flashlightButton);
+            
         }
     }
 
@@ -32,6 +35,8 @@ namespace CommandPattern
             if (FlashLightToggle.FlashlightActive && BatteryBar.enoughBatteries())
             {
                 gameObject.GetComponent<Light>().color = Color.white;
+                gameObject.GetComponent<Light>().innerSpotAngle = 45;
+                gameObject.GetComponent<Light>().spotAngle = 83;
                 FlashLightToggle.FlashlightMode = false;
                 SoundManager.PlaySound(SoundManager.Sound.flashlightChange);
             }
@@ -44,7 +49,9 @@ namespace CommandPattern
         {
             if (FlashLightToggle.FlashlightActive && BatteryBar.enoughBatteries())
             {
-                gameObject.GetComponent<Light>().color = Color.red;
+                gameObject.GetComponentInChildren<Light>().color = Color.red;
+                gameObject.GetComponent<Light>().innerSpotAngle = 0;
+                gameObject.GetComponent<Light>().spotAngle = 37;
                 FlashLightToggle.FlashlightMode = true;
                 SoundManager.PlaySound(SoundManager.Sound.flashlightChange);
             }

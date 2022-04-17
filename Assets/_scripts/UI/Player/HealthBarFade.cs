@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 
 public class HealthBarFade : MonoBehaviour
 {
@@ -28,7 +24,6 @@ public class HealthBarFade : MonoBehaviour
         damagedColor = damagedBarImage.color;
         damagedColor.a = 0f;
         damagedBarImage.color = damagedColor;
-        
         healthSystem = new HealthSystem(100);
         SetHealth(healthSystem.GetHealthNormalized());
         

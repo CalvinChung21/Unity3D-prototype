@@ -77,10 +77,10 @@ namespace CommandPattern
             }
             // white light
             else if (FlashLightToggle.FlashlightMode == false &&
-                     currentHitObject.GetComponent<NavMeshAgent>().isStopped == false)
+                     !currentHitObject.GetComponent<Ghost>().stopPathFinding)
             {
                 SoundManager.PlaySound(SoundManager.Sound.who);
-                currentHitObject.GetComponent<NavMeshAgent>().isStopped = true;
+                currentHitObject.GetComponent<Ghost>().stopPathFinding = true;
                 currentHitObject.GetComponent<Animator>().SetBool("Hit", true);
             }
         }

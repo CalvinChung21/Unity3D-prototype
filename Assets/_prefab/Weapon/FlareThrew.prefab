@@ -77,6 +77,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5026625067728812582, guid: 86e41880f6b73184886b59b3f7ffaf0c, type: 3}
+      propertyPath: m_TagString
+      value: Glowstick
+      objectReference: {fileID: 0}
     - target: {fileID: 5026625067728812583, guid: 86e41880f6b73184886b59b3f7ffaf0c, type: 3}
       propertyPath: m_RootOrder
       value: 0

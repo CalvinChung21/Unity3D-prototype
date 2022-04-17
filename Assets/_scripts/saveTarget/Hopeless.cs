@@ -28,7 +28,7 @@ namespace CommandPattern
                 LevelState.NotesNum--;
                 SoundManager.PlaySound(SoundManager.Sound.thankYou, gameObject.transform.position);
                 HopelessInfo.changeCountHopeless(-1);
-                Instantiate(bonfire, gameObject.transform.forward, Quaternion.identity);
+                Instantiate(bonfire, gameObject.transform.position, Quaternion.identity);
             }
             #endregion
         

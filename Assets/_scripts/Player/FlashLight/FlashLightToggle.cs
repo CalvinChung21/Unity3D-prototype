@@ -50,6 +50,8 @@ namespace CommandPattern
                 ScreenShake.Execute();
                 // play a 3d sound
                 SoundManager.PlaySound(SoundManager.Sound.ghostAttack, gameObject.transform.position);
+
+                other.enabled = false;
             }
         }
         
@@ -106,6 +108,7 @@ namespace CommandPattern
                 {
                     FlashlightActive = false;
                     Lights.SetActive(false);
+                    Patrol.patrolOn = true;
                 }
             #endregion
         }
