@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/_scenes/Tutorial/Tutorial2.unity
     guid: e02e2d5b8072a7f4ba811601897a6310
   - enabled: 1
-    path: Assets/_scenes/MainGameLevel/level2.unity
+    path: Assets/_scenes/MainGameLevel/Experiment.unity
     guid: 96e2b10a15cb462e94e04f201fd8b6f6
   - enabled: 1
     path: Assets/_scenes/Story/Story3.unity

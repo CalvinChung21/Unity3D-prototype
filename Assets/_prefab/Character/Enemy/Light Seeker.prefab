@@ -585,7 +585,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395803932914825537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0541369, y: 0.00000047683716, z: 4.873581}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 390254343355956355}
@@ -626,7 +626,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &395043720185315643
 MonoBehaviour:
@@ -640,7 +640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a272f73391744f97f8e59d3504a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destination: {fileID: 0}
 --- !u!136 &-1420365712805537686
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -682,6 +681,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d9a240da4c7a8419bf7910cc1a1bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 8
+  turnSpeed: 3
+  turnDst: 5
+  stoppingDst: -2
 --- !u!1 &395848887126973095
 GameObject:
   m_ObjectHideFlags: 0

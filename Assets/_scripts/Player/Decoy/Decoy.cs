@@ -16,6 +16,7 @@ public class Decoy : MonoBehaviour
     IEnumerator SelfDestruct()
     {
         yield return new WaitForSeconds(duration);
+        Patrol.patrolOn = true;
         Destroy(gameObject);
     }
 }

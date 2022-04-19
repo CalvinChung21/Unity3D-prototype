@@ -70,13 +70,13 @@ namespace CommandPattern
         if (currentHitObject.tag == "NPC")
         {
             // red light
-            if (currentHitObject.GetComponent<Ghost>().health > 0 
-                && FlashLightToggle.FlashlightMode)
-            {
-                currentHitObject.GetComponent<Ghost>().health -= 1;
-            }
+            // if (currentHitObject.GetComponent<Ghost>().health > 0 
+            //     && FlashLightToggle.FlashlightMode)
+            // {
+            //     currentHitObject.GetComponent<Ghost>().health -= 1;
+            // }
             // white light
-            else if (FlashLightToggle.FlashlightMode == false &&
+            if (FlashLightToggle.FlashlightMode == false &&
                      !currentHitObject.GetComponent<Ghost>().stopPathFinding)
             {
                 SoundManager.PlaySound(SoundManager.Sound.who);

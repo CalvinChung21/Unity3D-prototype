@@ -26,6 +26,7 @@ public class DecoyThrower : MonoBehaviour
         GameObject decoy = Instantiate(decoyPrefab, transform.position, transform.rotation);
         Rigidbody rb = decoy.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * throwForce);
+        Patrol.patrolOn = false;
     }
 
 }

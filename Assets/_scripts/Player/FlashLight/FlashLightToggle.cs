@@ -37,7 +37,7 @@ namespace CommandPattern
         {
             buttonF = new OpenFlashLight();
             leftMouseClick = new WhiteFlashLight();
-            rightMouseClick = new RedFlashLight();
+            // rightMouseClick = new RedFlashLight();
         }
         
         // When the player is being hit by the ghost's fist
@@ -73,11 +73,11 @@ namespace CommandPattern
                 leftMouseClick.Execute(Lights);
             }
             // right mouse click
-            if (Input.GetMouseButtonDown(1) && FlashlightActive)
-            {
-                ScreenShake.Execute();
-                rightMouseClick.Execute(Lights);
-            }
+            // if (Input.GetMouseButtonDown(1) && FlashlightActive)
+            // {
+            //     ScreenShake.Execute();
+            //     rightMouseClick.Execute(Lights);
+            // }
 
             // turn on/off the flashlight
             if (Input.GetKeyDown(KeyCode.F))

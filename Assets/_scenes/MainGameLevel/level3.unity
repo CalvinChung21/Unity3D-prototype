@@ -4003,7 +4003,7 @@ GameObject:
   - component: {fileID: 680988851}
   - component: {fileID: 680988850}
   m_Layer: 0
-  m_Name: A*
+  m_Name: PathFindingManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4033,7 +4033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51316e96f33aa07419ca8bc01c835367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathFindingMode: 0
+  pathFindingMode: 1
 --- !u!114 &680988852
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using System;
 
 public class Pathfinding : MonoBehaviour {
-	
-	Grid grid;
+
 	public enum PathFindingMode{
 		BreathFirstSearch,
 		GreedyBestFirst,
@@ -14,10 +13,284 @@ public class Pathfinding : MonoBehaviour {
 	}
 
 	public PathFindingMode pathFindingMode = PathFindingMode.BreathFirstSearch;
+
+	PathRequestManager requestManager;
+	Grid grid;
+	
 	void Awake() {
-		grid = GetComponent<Grid>(); // <-- getting the grid script
+		requestManager = GetComponent<PathRequestManager>();
+		grid = GetComponent<Grid>();
 	}
 	
+	// public void StartFindPath(Vector3 startPos, Vector3 targetPos) {
+	// 	switch (pathFindingMode)
+	// 		{
+	// 			case PathFindingMode.BreathFirstSearch: 
+	// 				StartCoroutine(BreathFirstSearch(startPos,targetPos));
+	// 				break;
+	// 			case PathFindingMode.GreedyBestFirst :
+	// 				StartCoroutine(GreedyBestFirst(startPos,targetPos));
+	// 				break;
+	// 			case PathFindingMode.Dijkstra : 
+	// 				StartCoroutine(Dijkstra(startPos,targetPos));
+	// 				break;
+	// 			case PathFindingMode.Astar : 
+	// 				StartCoroutine(Astar(startPos,targetPos));
+	// 				break;
+	// 			default: break;
+	// 		}
+	// 	
+	// }
+	//
+	// IEnumerator Astar(Vector3 startPos, Vector3 targetPos) {
+	//
+	// 	Vector3[] waypoints = new Vector3[0];
+	// 	bool pathSuccess = false;
+	// 	
+	// 	Node startNode = grid.NodeFromWorldPoint(startPos);
+	// 	Node targetNode = grid.NodeFromWorldPoint(targetPos);
+	// 	
+	// 	
+	// 	if (startNode.walkable && targetNode.walkable) {
+	// 		Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
+	// 		HashSet<Node> closedSet = new HashSet<Node>();
+	// 		openSet.Add(startNode);
+	// 		
+	// 		while (openSet.Count > 0) {
+	// 			Node currentNode = openSet.RemoveFirst();
+	// 			closedSet.Add(currentNode);
+	// 			
+	// 			if (currentNode == targetNode) {
+	// 				pathSuccess = true;
+	// 				break;
+	// 			}
+	// 			
+	// 			foreach (Node neighbour in grid.GetNeighbours(currentNode)) {
+	// 				if (!neighbour.walkable || closedSet.Contains(neighbour)) {
+	// 					continue;
+	// 				}
+	// 				
+	// 				int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour);
+	// 				if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour)) {
+	// 					neighbour.gCost = newMovementCostToNeighbour;
+	// 					neighbour.hCost = GetDistance(neighbour, targetNode);
+	// 					neighbour.parent = currentNode;
+	// 					
+	// 					if (!openSet.Contains(neighbour))
+	// 					{
+	// 						openSet.Add(neighbour);
+	// 					}
+	// 					else // or update the neighbour if it already exists
+	// 					{
+	// 						openSet.UpdateItem(neighbour);
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	yield return null;
+	// 	if (pathSuccess) {
+	// 		waypoints = RetracePath(startNode,targetNode);
+	// 	}
+	// 	requestManager.FinishedProcessingPath(waypoints,pathSuccess);
+	// 	
+	// }
+	//
+	// IEnumerator Dijkstra(Vector3 startPos, Vector3 targetPos)
+	// {
+	//
+	// 	Vector3[] waypoints = new Vector3[0];
+	// 	bool pathSuccess = false;
+	//
+	// 	Node startNode = grid.NodeFromWorldPoint(startPos);
+	// 	Node targetNode = grid.NodeFromWorldPoint(targetPos);
+	//
+	//
+	// 	if (startNode.walkable && targetNode.walkable)
+	// 	{
+	// 		Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
+	// 		HashSet<Node> closedSet = new HashSet<Node>();
+	// 		openSet.Add(startNode);
+	//
+	// 		while (openSet.Count > 0)
+	// 		{
+	// 			// visit the first node in the openset and remove it
+	// 			Node currentNode = openSet.RemoveFirst();
+	// 			// add it to close set as a visited node
+	// 			closedSet.Add(currentNode);
+	// 			// when the target node is found break the function
+	// 			if (currentNode == targetNode)
+	// 			{
+	// 				pathSuccess = true;
+	// 				break;
+	// 			}
+	//
+	// 			// loop through each neighbour node
+	// 			foreach (Node neighbour in grid.GetNeighbours(currentNode))
+	// 			{
+	// 				// if it is not walkable or visited, skip it
+	// 				if (!neighbour.walkable || closedSet.Contains(neighbour))
+	// 				{
+	// 					continue;
+	// 				}
+	//
+	// 				// calculate the cost
+	// 				int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour);
+	// 				// if the new g cost is less than the current neighbour g cost
+	// 				// or the neighbour isn't in the openset
+	// 				// then set the neighbour's g cost and parent
+	// 				if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
+	// 				{
+	// 					neighbour.gCost = newMovementCostToNeighbour;
+	// 					neighbour.parent = currentNode;
+	// 					// add the neighbour in openset
+	// 					if (!openSet.Contains(neighbour))
+	// 					{
+	// 						openSet.Add(neighbour);
+	// 					}
+	// 					else // or update the neighbour if it already exists
+	// 					{
+	// 						openSet.UpdateItem(neighbour);
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	//
+	// 		yield return null;
+	// 		if (pathSuccess)
+	// 		{
+	// 			waypoints = RetracePath(startNode, targetNode);
+	// 		}
+	//
+	// 		requestManager.FinishedProcessingPath(waypoints, pathSuccess);
+	//
+	// 	}
+	// }
+	//
+	// IEnumerator GreedyBestFirst(Vector3 startPos, Vector3 targetPos)
+	// {
+	//
+	// 	Vector3[] waypoints = new Vector3[0];
+	// 	bool pathSuccess = false;
+	//
+	// 	Node startNode = grid.NodeFromWorldPoint(startPos);
+	// 	Node targetNode = grid.NodeFromWorldPoint(targetPos);
+	//
+	//
+	// 	if (startNode.walkable && targetNode.walkable)
+	// 	{
+	// 		Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
+	// 		HashSet<Node> closedSet = new HashSet<Node>();
+	// 		openSet.Add(startNode);
+	// 		
+	// 		while (openSet.Count > 0) {
+	// 			// visit the first node in the openset and remove it
+	// 			Node currentNode = openSet.RemoveFirst();
+	// 			// add it to close set as a visited node
+	// 			closedSet.Add(currentNode);
+	// 			// when the target node is found break the function
+	// 			if (currentNode == targetNode) {
+	// 				pathSuccess = true;
+	// 				break;
+	// 			}
+	// 			// loop through each neighbour node
+	// 			foreach (Node neighbour in grid.GetNeighbours(currentNode)) {
+	// 				// if it is not walkable or visited, skip it
+	// 				if (!neighbour.walkable || closedSet.Contains(neighbour)) {
+	// 					continue;
+	// 				}
+	// 				// calculate the cost
+	// 				int newMovementCostToNeighbour = currentNode.hCost + GetDistance(currentNode, neighbour);	
+	// 				// if the new g cost is less than the current neighbour g cost
+	// 				// or the neighbour isn't in the openset
+	// 				// then set the neighbour's g cost and parent
+	// 				if (newMovementCostToNeighbour < neighbour.hCost || !openSet.Contains(neighbour)) {
+	// 					neighbour.hCost = newMovementCostToNeighbour;
+	// 					neighbour.parent = currentNode;
+	// 					// add the neighbour in openset
+	// 					if (!openSet.Contains(neighbour))
+	// 					{
+	// 						openSet.Add(neighbour);
+	// 					}
+	// 					else // or update the neighbour if it already exists
+	// 					{
+	// 						openSet.UpdateItem(neighbour);
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	//
+	// 		yield return null;
+	// 		if (pathSuccess)
+	// 		{
+	// 			waypoints = RetracePath(startNode, targetNode);
+	// 		}
+	//
+	// 		requestManager.FinishedProcessingPath(waypoints, pathSuccess);
+	//
+	// 	}
+	// }
+	//
+	// IEnumerator BreathFirstSearch(Vector3 startPos, Vector3 targetPos)
+	// {
+	// 	int exploredNode = 0;
+	// 	Vector3[] waypoints = new Vector3[0];
+	// 	bool pathSuccess = false;
+	//
+	// 	Node startNode = grid.NodeFromWorldPoint(startPos);
+	// 	Node targetNode = grid.NodeFromWorldPoint(targetPos);
+	//
+	//
+	// 	if (startNode.walkable && targetNode.walkable)
+	// 	{
+	// 		Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
+	// 		HashSet<Node> closedSet = new HashSet<Node>();
+	// 		openSet.Add(startNode);
+	// 		
+	// 		while (openSet.Count > 0) {
+	// 			// visit the first node in the openset and remove it
+	// 			Node currentNode = openSet.RemoveFirst();
+	//
+	// 			// add it to close set as a visited node
+	// 			closedSet.Add(currentNode);
+	// 			// when the target node is found break the function
+	// 			if (currentNode == targetNode) {
+	// 				pathSuccess = true;
+	// 				break;
+	// 			}
+	// 			// loop through each neighbour node
+	// 			foreach (Node neighbour in grid.GetNeighbours(currentNode)) {
+	// 				// if it is not walkable or visited, skip it
+	// 				if (!neighbour.walkable || closedSet.Contains(neighbour)) {
+	// 					continue;
+	// 				}
+	// 				// add the neighbour in openset
+	// 				if (!openSet.Contains(neighbour))
+	// 				{
+	// 					exploredNode++;
+	// 					neighbour.exploredNodes = exploredNode;
+	// 					neighbour.parent = currentNode;
+	// 					openSet.Add(neighbour);
+	// 				}
+	// 				else // or update the neighbour if it already exists
+	// 				{
+	// 					openSet.UpdateItem(neighbour);
+	// 				}
+	// 			}
+	// 		}
+	//
+	// 		yield return null;
+	// 		if (pathSuccess)
+	// 		{
+	// 			waypoints = RetracePath(startNode, targetNode);
+	// 		}
+	//
+	// 		requestManager.FinishedProcessingPath(waypoints, pathSuccess);
+	//
+	// 	}
+	// }
+
+// // with multithreading
 	public void FindPath(PathRequest request, Action<PathResult> callback) 
 	{
 		// keep doing the find path method
@@ -42,7 +315,6 @@ public class Pathfinding : MonoBehaviour {
 	// A* pathfinding
 	public void AstarFindPath(PathRequest request, Action<PathResult> callback)
 	{
-
 		Vector3[] waypoints = new Vector3[0];
 		bool pathSuccess = false;
 		
@@ -105,7 +377,6 @@ public class Pathfinding : MonoBehaviour {
 	
 	public void DijkstraFindPath(PathRequest request, Action<PathResult> callback)
 	{
-
 		Vector3[] waypoints = new Vector3[0];
 		bool pathSuccess = false;
 		
@@ -115,13 +386,13 @@ public class Pathfinding : MonoBehaviour {
 		// check if start and target node are walkable
 		if (startNode.walkable && targetNode.walkable)
 		{
-			Queue<Node> openSet = new Queue<Node>();
+			Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
 			HashSet<Node> closedSet = new HashSet<Node>();
-			openSet.Enqueue(startNode);
+			openSet.Add(startNode);
 			
 			while (openSet.Count > 0) {
 				// visit the first node in the openset and remove it
-				Node currentNode = openSet.Dequeue();
+				Node currentNode = openSet.RemoveFirst();
 				// add it to close set as a visited node
 				closedSet.Add(currentNode);
 				// when the target node is found break the function
@@ -146,7 +417,11 @@ public class Pathfinding : MonoBehaviour {
 						// add the neighbour in openset
 						if (!openSet.Contains(neighbour))
 						{
-							openSet.Enqueue(neighbour);
+							openSet.Add(neighbour);
+						}
+						else // or update the neighbour if it already exists
+						{
+							openSet.UpdateItem(neighbour);
 						}
 					}
 				}
@@ -163,7 +438,6 @@ public class Pathfinding : MonoBehaviour {
 	
 	public void GreedyBestFirstFindPath(PathRequest request, Action<PathResult> callback)
 	{
-
 		Vector3[] waypoints = new Vector3[0];
 		bool pathSuccess = false;
 		
@@ -173,13 +447,13 @@ public class Pathfinding : MonoBehaviour {
 		// check if start and target node are walkable
 		if (startNode.walkable && targetNode.walkable)
 		{
-			Queue<Node> openSet = new Queue<Node>();
+			Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
 			HashSet<Node> closedSet = new HashSet<Node>();
-			openSet.Enqueue(startNode);
+			openSet.Add(startNode);
 			
 			while (openSet.Count > 0) {
 				// visit the first node in the openset and remove it
-				Node currentNode = openSet.Dequeue();
+				Node currentNode = openSet.RemoveFirst();
 				// add it to close set as a visited node
 				closedSet.Add(currentNode);
 				// when the target node is found break the function
@@ -195,16 +469,20 @@ public class Pathfinding : MonoBehaviour {
 					}
 					// calculate the cost
 					int newMovementCostToNeighbour = currentNode.hCost + GetDistance(currentNode, neighbour);	
-					// if the new g cost is less than the current neighbour g cost
+					// if the new h cost is less than the current neighbour h cost
 					// or the neighbour isn't in the openset
-					// then set the neighbour's g cost and parent
+					// then set the neighbour's h cost and parent
 					if (newMovementCostToNeighbour < neighbour.hCost || !openSet.Contains(neighbour)) {
 						neighbour.hCost = newMovementCostToNeighbour;
 						neighbour.parent = currentNode;
 						// add the neighbour in openset
 						if (!openSet.Contains(neighbour))
 						{
-							openSet.Enqueue(neighbour);
+							openSet.Add(neighbour);
+						}
+						else // or update the neighbour if it already exists
+						{
+							openSet.UpdateItem(neighbour);
 						}
 					}
 				}
@@ -226,21 +504,22 @@ public class Pathfinding : MonoBehaviour {
 	{
 		Vector3[] waypoints = new Vector3[0];
 		bool pathSuccess = false;
-		
+	
+		int exploredNode = 0;
 		Node startNode = grid.NodeFromWorldPoint(request.pathStart);
 		Node targetNode = grid.NodeFromWorldPoint(request.pathEnd);
 		
 		// check if start and target node are walkable
 		if (startNode.walkable && targetNode.walkable)
 		{
-			Queue<Node> openSet = new Queue<Node>();
+			Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
 			HashSet<Node> closedSet = new HashSet<Node>();
-			openSet.Enqueue(startNode);
+			openSet.Add(startNode);
 			
 			while (openSet.Count > 0) {
 				// visit the first node in the openset and remove it
-				Node currentNode = openSet.Dequeue();
-
+				Node currentNode = openSet.RemoveFirst();
+	
 				// add it to close set as a visited node
 				closedSet.Add(currentNode);
 				// when the target node is found break the function
@@ -254,10 +533,16 @@ public class Pathfinding : MonoBehaviour {
 					if (!neighbour.walkable || closedSet.Contains(neighbour)) {
 						continue;
 					}
-					if (!openSet.Contains(neighbour)) {
+					exploredNode++;
+					neighbour.exploredNodes = exploredNode;
+					if (!openSet.Contains(neighbour))
+					{
 						neighbour.parent = currentNode;
-						// add the neighbour in openset
-						openSet.Enqueue(neighbour);
+						openSet.Add(neighbour);
+					}
+					else // or update the neighbour if it already exists
+					{
+						openSet.UpdateItem(neighbour);
 					}
 				}
 			}

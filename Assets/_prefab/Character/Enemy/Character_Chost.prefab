@@ -1328,7 +1328,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d9a240da4c7a8419bf7910cc1a1bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  target: {fileID: 5920491221634547318, guid: 877cbe072b40313449d3a2322265b76d, type: 3}
+  speed: 3
+  turnSpeed: 3
+  turnDst: 5
+  stoppingDst: 2
 --- !u!114 &1758701230834504754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,13 +1345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcb82611dde4a74abcb3c4ff5783098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RightFist: {fileID: 3743264337507296057}
   stopPathFinding: 0
   _animator: {fileID: 2754088676801860888, guid: 41dffd4855239864f9015b142cc7e85d, type: 3}
-  health: 100
-  maxHealth: 100
-  healthBarUI: {fileID: 3923126555422233282, guid: 41dffd4855239864f9015b142cc7e85d, type: 3}
-  slider: {fileID: 4865464034034492314, guid: 41dffd4855239864f9015b142cc7e85d, type: 3}
+  m_RightFist: {fileID: 3743264337507296057}
 --- !u!114 &-6017621986143593594
 MonoBehaviour:
   m_ObjectHideFlags: 0
