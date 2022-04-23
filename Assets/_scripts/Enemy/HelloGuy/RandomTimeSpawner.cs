@@ -21,7 +21,13 @@ namespace CommandPattern
     
         //The time to spawn the object
         private float spawnTime;
-    
+        
+        private PopupWindow _popupWindow;
+
+        private void Awake()
+        {
+            _popupWindow = GameObject.Find("PopupWindowMain").GetComponent<PopupWindow>();
+        }
         void Start()
         {
             SetRandomTime();
@@ -66,6 +72,7 @@ namespace CommandPattern
                 SoundManager.PlaySound(SoundManager.Sound.evilLaugh, obj.transform.position);
                 BatteryBar.changeBatteries(-1);
                 SoundManager.PlaySound(SoundManager.Sound.decreaseBattery);
+                _popupWindow.AddToQueue("Batteries Decreased");
                 Destroy(obj);
             }
         }

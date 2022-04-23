@@ -1,9 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.Rendering.HighDefinition;
-using UnityEngine.UI;
 
 namespace CommandPattern
 {

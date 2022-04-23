@@ -24,6 +24,15 @@ namespace CommandPattern
     private Vector3 origin;
     private Vector3 direction;
 
+    private PopupWindow _popupWindow;
+
+    private float multiplier = 0.5f;
+    private float t = 0;
+    private void Awake()
+    {
+        _popupWindow = GameObject.Find("PopupWindowMain").GetComponent<PopupWindow>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -87,7 +96,16 @@ namespace CommandPattern
         // dealing with hello guy
         else if (currentHitObject.tag == "HelloGuy" && currentHitObject.GetComponent<SkinnedMeshRenderer>()!=null)
         {
-            StartCoroutine(FadeOutMaterial(0.1f, currentHitObject));
+            // StartCoroutine(FadeOutMaterial(0.1f, currentHitObject));
+            t += multiplier * Time.deltaTime;
+            float emissiveIntensity = Mathf.Lerp(0, 10, t);
+            Color emissiveColor = Color.green;
+            currentHitObject.GetComponent<SkinnedMeshRenderer>().material.EnableKeyword("_Emission");
+            currentHitObject.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", emissiveColor * emissiveIntensity);
+        }
+        else
+        {
+            t = 0;
         }
     }
     //code reference from https://stackoverflow.com/questions/54042904/how-to-fade-out-disapear-a-gameobject-slowly
@@ -96,13 +114,15 @@ namespace CommandPattern
         Renderer rend = currentGameObject.GetComponent<SkinnedMeshRenderer>();
         Color matColor = rend.material.color;
         float alphaValue = rend.material.color.a;
-
+        
         if (alphaValue > 14f)
         {
             // make hello guy disappear
             Destroy(currentGameObject);
             SoundManager.PlaySound(SoundManager.Sound.increaseBattery);
             BatteryBar.changeBatteries(1f);
+            _popupWindow.AddToQueue("Batteries Increased");
+            
         } else if (alphaValue > 10f)
         {
             // play audio and play particle system
