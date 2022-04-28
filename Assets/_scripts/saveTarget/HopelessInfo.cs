@@ -1,7 +1,5 @@
 using UnityEngine;
 
-namespace CommandPattern
-{
     public static class HopelessInfo
     {
         // counting the number of hopeless guy
@@ -22,4 +20,3 @@ namespace CommandPattern
             return countHopeless;
         }
     }
-}

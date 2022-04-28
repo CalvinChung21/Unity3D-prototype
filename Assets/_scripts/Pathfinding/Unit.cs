@@ -123,24 +123,23 @@ public class Unit : MonoBehaviour {
     
     void Update()
     {
+	    if (gameObject.tag == "NPC" && gameObject.GetComponent<Ghost>().stopPathFinding)
+	    {
+		    target = gameObject.transform;
+	    }
+	    else
+	    {
+		    target = GameObject.Find("FlareThrew(Clone)")!=null
+			    ? GameObject.Find("FlareThrew(Clone)").transform
+			    : GameObject.Find("FPSController").transform;
+	    }
 	    
     if (target.tag == "Glowstick")
     {
         Patrol.patrolOn = false;
     }
-	    
-     if (gameObject.tag == "NPC" && gameObject.GetComponent<Ghost>().stopPathFinding)
-     {
-         target = gameObject.transform;
-     }
-     else
-     {
-	     target = GameObject.Find("FlareThrew(Clone)")!=null
-		     ? GameObject.Find("FlareThrew(Clone)").transform
-		     : GameObject.Find("FPSController").transform;
-     }
-        
-        // if (gameObject.tag == "NPC" && !gameObject.GetComponent<Ghost>().stopPathFinding)
+
+    // if (gameObject.tag == "NPC" && !gameObject.GetComponent<Ghost>().stopPathFinding)
         // {
         //     if (target.hasChanged)
         //     {

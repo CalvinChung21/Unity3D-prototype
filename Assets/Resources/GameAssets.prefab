@@ -68,7 +68,7 @@ MonoBehaviour:
   - sound: 10
     AudioClip: {fileID: 8300000, guid: 82dcde8149f8416409e7ae7b62bac6f5, type: 3}
   - sound: 11
-    AudioClip: {fileID: 8300000, guid: c8090da8705ec634eaaa16c7377c231d, type: 3}
+    AudioClip: {fileID: 8300000, guid: f40f1fed79923a5458d6d552205d2e90, type: 3}
   - sound: 12
     AudioClip: {fileID: 8300000, guid: e437be623d60f1048b53fdad5de8a7b4, type: 3}
   - sound: 13
@@ -77,6 +77,10 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: c8090da8705ec634eaaa16c7377c231d, type: 3}
   - sound: 15
     AudioClip: {fileID: 8300000, guid: 4e3f74aa25bd7804e908c23c8df7645d, type: 3}
+  - sound: 16
+    AudioClip: {fileID: 8300000, guid: 3687c90ee5f7c744aaba86bbcfd1080e, type: 3}
+  - sound: 17
+    AudioClip: {fileID: 8300000, guid: 0a1dbffdea37693468e67a4892efc107, type: 3}
 --- !u!252 &1149626606616162205
 SurfaceEffector2D:
   m_ObjectHideFlags: 0

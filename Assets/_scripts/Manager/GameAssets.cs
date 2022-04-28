@@ -1,7 +1,6 @@
 using UnityEngine;
 
-namespace CommandPattern
-{
+
     public class GameAssets : MonoBehaviour
     {
         private static GameAssets _i;
@@ -27,4 +26,3 @@ namespace CommandPattern
 
         
     }
-}

@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CommandPattern
-{
     public class EnemyManager : MonoBehaviour
     {
         // reference code from https://www.youtube.com/watch?v=NWNH9XRtuIc
@@ -30,5 +28,3 @@ namespace CommandPattern
             Instantiate(m_EnemyPrefab, m_SpawnPoints[randomNumber].transform.position, Quaternion.identity);
         }
     }
-
-}

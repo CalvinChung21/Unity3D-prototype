@@ -669,6 +669,7 @@ MonoBehaviour:
   speed: 10
   startWaitTime: 2
   moveSpots: []
+  model: {fileID: 395681108996652019}
 --- !u!114 &-141573166886521189
 MonoBehaviour:
   m_ObjectHideFlags: 0

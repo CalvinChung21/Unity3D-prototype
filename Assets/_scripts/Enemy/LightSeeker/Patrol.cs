@@ -14,9 +14,18 @@ public class Patrol : MonoBehaviour
 
     public static bool patrolOn = true;
 
+    [SerializeField] GameObject model;
+    
+    Color colour;
+
+    private Color glowingColor;
+
+    private float t = 1;
     // Start is called before the first frame update
     void Start()
     {
+        colour = model.GetComponent<SkinnedMeshRenderer>().material.GetColor("_EmissionColor");
+        glowingColor = colour;
         moveSpots = GameObject.Find("MoveSpots").GetComponentsInChildren<Transform>();
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpots.Length);
@@ -27,6 +36,9 @@ public class Patrol : MonoBehaviour
     {
         if (patrolOn)
         {
+            t = 1;
+            glowingColor = colour * 9.9f;
+            model.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", colour);
             transform.position = Vector3.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
             if(Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f)
@@ -40,6 +52,15 @@ public class Patrol : MonoBehaviour
                 {
                     waitTime -= Time.deltaTime;
                 }
+            }
+        }
+        else
+        {
+            if (t < 50)
+            {
+                t += 1;
+                glowingColor *= 1.1f;
+                model.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", glowingColor);
             }
         }
     }

@@ -99,7 +99,7 @@ namespace CommandPattern
             // reset the setting
             HopelessInfo.setCountHopeless(0);
             LevelState.NotesNum = 0;
-            BatteryBar.setBatteries(5);
+            Flashlight.setBatteries(5);
         }
     }
 

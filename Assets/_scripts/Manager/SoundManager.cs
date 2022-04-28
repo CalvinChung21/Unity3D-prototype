@@ -3,13 +3,11 @@ using Cinemachine;
 using UnityEditor;
 using UnityEngine;
 
-namespace CommandPattern
-{
     public static class SoundManager 
     {
         public enum Sound
         {
-            recover,
+            happy,
             grab,
             throwing,
             flashlightButton,
@@ -24,7 +22,9 @@ namespace CommandPattern
             who,
             fire,
             increaseBattery,
-            decreaseBattery
+            decreaseBattery,
+            shaking,
+            flashlightFlicker
         }
 
         private static Dictionary<Sound, float> soundTimerDictionary;
@@ -33,8 +33,11 @@ namespace CommandPattern
         {
             soundTimerDictionary = new Dictionary<Sound, float>();
             soundTimerDictionary[Sound.ghostAttack] = 0;
-            soundTimerDictionary[Sound.recover] = 0;
+            soundTimerDictionary[Sound.happy] = 0;
             soundTimerDictionary[Sound.who] = 0;
+            soundTimerDictionary[Sound.shaking] = 0;
+            soundTimerDictionary[Sound.flashlightFlicker] = 0;
+            soundTimerDictionary[Sound.healing] = 0;
         }
         
         // generate a gameobject in random position and add audioSource component to it and play the required audio
@@ -96,7 +99,7 @@ namespace CommandPattern
                         return true;
                     }
                     break;
-                case Sound.recover:
+                case Sound.happy:
                     if (soundTimerDictionary.ContainsKey(sound))
                     {
                         float lastTimePlayed = soundTimerDictionary[sound];
@@ -136,6 +139,66 @@ namespace CommandPattern
                         return true;
                     }
                     break;
+                case Sound.shaking:
+                    if (soundTimerDictionary.ContainsKey(sound))
+                    {
+                        float lastTimePlayed = soundTimerDictionary[sound];
+                        float whoTimerMax = 0.801f;
+                        if (lastTimePlayed + whoTimerMax < Time.time)
+                        {
+                            soundTimerDictionary[sound] = Time.time;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                    break;
+                case Sound.flashlightFlicker:
+                    if (soundTimerDictionary.ContainsKey(sound))
+                    {
+                        float lastTimePlayed = soundTimerDictionary[sound];
+                        float whoTimerMax = 03.949f;
+                        if (lastTimePlayed + whoTimerMax < Time.time)
+                        {
+                            soundTimerDictionary[sound] = Time.time;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                    break;
+                case Sound.healing:
+                    if (soundTimerDictionary.ContainsKey(sound))
+                    {
+                        float lastTimePlayed = soundTimerDictionary[sound];
+                        float whoTimerMax = 0.125f;
+                        if (lastTimePlayed + whoTimerMax < Time.time)
+                        {
+                            soundTimerDictionary[sound] = Time.time;
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                    break;
             }
         }
         // Get the corresponding audio clip from the array
@@ -153,4 +216,3 @@ namespace CommandPattern
         }
         
     }
-}

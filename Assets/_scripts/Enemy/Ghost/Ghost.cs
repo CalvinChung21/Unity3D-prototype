@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-namespace CommandPattern
-{
     public class Ghost : MonoBehaviour
     {
         public delegate void EnemyKilled();
@@ -94,5 +92,4 @@ namespace CommandPattern
         // }
 
     }
-}
 

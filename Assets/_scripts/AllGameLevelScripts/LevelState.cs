@@ -1,7 +1,5 @@
 using UnityEngine.SceneManagement;
 
-namespace CommandPattern
-{
     public class LevelState
     {
         private static int level = SceneManager.sceneCount;
@@ -40,4 +38,3 @@ namespace CommandPattern
             set => notesNum = value;
         }
     }
-}

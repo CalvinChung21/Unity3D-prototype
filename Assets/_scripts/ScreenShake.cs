@@ -1,5 +1,4 @@
-namespace CommandPattern
-{
+
     public static class ScreenShake
     {
         private static TraumaInducer _traumaInducer;
@@ -10,4 +9,3 @@ namespace CommandPattern
             _traumaInducer.StartCoroutine(_traumaInducer.InduceStress());
         }
     }
-}
