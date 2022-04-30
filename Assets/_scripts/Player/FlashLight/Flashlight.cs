@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -51,6 +52,8 @@ using Random = UnityEngine.Random;
         private MeshRenderer rend;
 
         private float intensity;
+
+        public static bool flicker = false;
         // float lerpSpeed;
         private void Start()
         {
@@ -60,16 +63,14 @@ using Random = UnityEngine.Random;
         private void Update()
         {
 
-            if (_currentBatteries > 0)
+            if (_currentBatteries > 0 && !flicker)
             {
-                gameObject.GetComponent<Light>().enabled = true;
                 flashlightActive = true;
                 Lights.SetActive(true);
                 Patrol.patrolOn = false;
             }
-            else
+            else if(!flicker)
             {
-                gameObject.GetComponent<Light>().enabled = false;
                 flashlightActive = false;
                 Lights.SetActive(false);
                 Patrol.patrolOn = true;
@@ -77,7 +78,7 @@ using Random = UnityEngine.Random;
 
             AdjustEmissionOfTheFlashlight();
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && !flicker)
             {
                 Shake();
             }
@@ -97,9 +98,14 @@ using Random = UnityEngine.Random;
                 flashlightActive = false;
                 Lights.SetActive(false);
                 Patrol.patrolOn = true;
+                flicker = false;
             }
             #endregion
-            
+
+            if (flicker)
+            {
+                StartCoroutine(FlashLightFlicker());
+            }
         }
 
         void AdjustEmissionOfTheFlashlight()
@@ -139,6 +145,13 @@ using Random = UnityEngine.Random;
             {
                 isShaking = false;
             }
+        }
+        
+        IEnumerator FlashLightFlicker()
+        {
+            Lights.SetActive(!Lights.activeSelf);
+                
+            yield return new WaitForSeconds(Random.Range(0,1));
         }
 
         void ResetFlashlightTransform()

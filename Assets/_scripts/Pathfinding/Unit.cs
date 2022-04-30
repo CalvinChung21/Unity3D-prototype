@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 using CommandPattern;
@@ -104,14 +105,13 @@ public class Unit : MonoBehaviour {
     public float stoppingDst = 0;
     
     Path path;
-    
-    void Start() {
-        target = GameObject.Find("FlareThrew(Clone)")!=null
-            ? GameObject.Find("FlareThrew(Clone)").transform
-            : GameObject.Find("FPSController").transform;
-        StartCoroutine (UpdatePath ());
+
+    private void Start()
+    {
+	    target = gameObject.transform;
+	    StartCoroutine (UpdatePath ());
     }
-    
+
     public void OnPathFound(Vector3[] waypoints, bool pathSuccessful) {
         if (pathSuccessful) {
             path = new Path(waypoints, transform.position, turnDst, stoppingDst);
@@ -123,21 +123,26 @@ public class Unit : MonoBehaviour {
     
     void Update()
     {
-	    if (gameObject.tag == "NPC" && gameObject.GetComponent<Ghost>().stopPathFinding)
+	    if (!SafeZone.safe)
 	    {
-		    target = gameObject.transform;
-	    }
-	    else
-	    {
-		    target = GameObject.Find("FlareThrew(Clone)")!=null
-			    ? GameObject.Find("FlareThrew(Clone)").transform
-			    : GameObject.Find("FPSController").transform;
+		    if (gameObject.tag == "NPC" && gameObject.GetComponent<Ghost>().stopPathFinding)
+		    {
+			    target = gameObject.transform;
+		    }
+		    else if(gameObject.tag == "NPC" || gameObject.tag == "LightSeeker")
+		    {
+			    target = GameObject.Find("FlareThrew(Clone)")!=null
+				    ? GameObject.Find("FlareThrew(Clone)").transform
+				    : GameObject.Find("FPSController").transform;
+		    }
+	    
+		    if (target.tag == "Glowstick")
+		    {
+			    Patrol.patrolOn = false;
+		    }
+		    
 	    }
 	    
-    if (target.tag == "Glowstick")
-    {
-        Patrol.patrolOn = false;
-    }
 
     // if (gameObject.tag == "NPC" && !gameObject.GetComponent<Ghost>().stopPathFinding)
         // {

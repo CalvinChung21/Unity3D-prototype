@@ -1,12 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
-    public class Hopeless : MonoBehaviour
+public class Hopeless : MonoBehaviour
     {
         // whether the hopeless guy is being saved
-        private bool savedAndHopeful = false;
+        public bool savedAndHopeful = false;
 
+        [SerializeField]
+        Transform savePoint;
+        
         private void Awake()
         {
             HopelessInfo.changeCountHopeless(1);
@@ -17,9 +22,6 @@ using UnityEngine;
             #region saving the hopeless guy with note
             if (collision.gameObject.tag == "MainCamera" && LevelState.NotesNum > 0 && !savedAndHopeful)
             {
-                GetComponentInChildren<Light>().enabled = true;
-                // a box collider as a safe area for the player to avoid danger
-                GetComponentInChildren<BoxCollider>().enabled = true;
                 GetComponentInChildren<SkinnedMeshRenderer>().material.EnableKeyword("_EMISSION");
                     
                 savedAndHopeful = true;
@@ -36,6 +38,19 @@ using UnityEngine;
                 SoundManager.PlaySound(SoundManager.Sound.healing, gameObject.transform.position);
             }
             #endregion
+        }
+
+        private void Update()
+        {
+            if (savedAndHopeful)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, savePoint.position, Time.deltaTime*2.0f);
+            }
+
+            if (transform.position == savePoint.position)
+            {
+                GetComponentInChildren<SkinnedMeshRenderer>().material.DisableKeyword("_EMISSION");
+            }
         }
     }
 

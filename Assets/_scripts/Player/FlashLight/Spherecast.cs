@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
-    public class Spherecast : MonoBehaviour
+public class Spherecast : MonoBehaviour
     {
         [SerializeField] private GameObject camera;
     
@@ -24,15 +25,40 @@ using UnityEngine.AI;
     private Vector3 origin;
     private Vector3 direction;
 
+    // for emission of the soul
     private float multiplier = 0.5f;
     public static float t = 0;
 
     // Update is called once per frame
     void Update()
     {
+        // Interactive system
+        RayCast();
+        
+        // For flashlight as a weapon
         SphereCast();
+        
     }
 
+    void RayCast()
+    {
+        // get the camera's position and direction
+        origin = camera.transform.position;
+        direction = camera.transform.forward;
+        
+        RaycastHit hit;
+        if (Physics.Raycast(origin, direction, out hit, 3, layerMask))
+        {
+            if (hit.collider.GetComponent<Interactable>() != false)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.GetComponent<Interactable>().onInteract.Invoke();
+                }
+            }
+        }
+    }
+    
     void SphereCast()
     {
         // only do spherecast when the flashlight is on
@@ -51,7 +77,6 @@ using UnityEngine.AI;
                 
                 // if the object being hit is enemy,
                 DealWithNPC();
-                
             }
             else
             {
@@ -107,6 +132,7 @@ using UnityEngine.AI;
         }
 
     }
+    
     //code reference from https://stackoverflow.com/questions/54042904/how-to-fade-out-disapear-a-gameobject-slowly
     // IEnumerator FadeOutMaterial(float fadeSpeed, GameObject currentGameObject)
     // {

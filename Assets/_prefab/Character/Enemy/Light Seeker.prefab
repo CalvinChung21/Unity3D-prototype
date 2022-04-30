@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: -141573166886521189}
   m_Layer: 9
   m_Name: Light Seeker
-  m_TagString: Untagged
+  m_TagString: LightSeeker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -602,8 +602,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395803932914825537}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 50f4e8bbe8f875e4ab3afd038dc72e1c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 07f7e369ba6e5dc4ab3cb1ac0387e904, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 93f175331b13808429d4b085140d308c, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7ef03de4f3c360048bcc8a0e3aa6993d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d9a240da4c7a8419bf7910cc1a1bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 7
   turnSpeed: 3
   turnDst: 5
   stoppingDst: -2

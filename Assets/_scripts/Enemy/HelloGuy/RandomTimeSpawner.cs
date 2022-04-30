@@ -51,13 +51,16 @@ public class RandomTimeSpawner : MonoBehaviour
     
         void FixedUpdate()
         {
-            //Counts up
-            time += Time.deltaTime;
-            //Check if its the right time to spawn the object
-            if (time >= spawnTime)
+            if (!SafeZone.safe)
             {
-                SpawnObject();
-                SetRandomTime();
+                //Counts up
+                time += Time.deltaTime;
+                //Check if its the right time to spawn the object
+                if (time >= spawnTime)
+                {
+                    SpawnObject();
+                    SetRandomTime();
+                }
             }
         }
     
@@ -88,6 +91,7 @@ public class RandomTimeSpawner : MonoBehaviour
                 if (Flashlight.FlashlightActive)
                 {
                     Flashlight.setBatteries(1f);
+                    Flashlight.flicker = true;
                     HealthBarFade.Damage();
                     SoundManager.PlaySound(SoundManager.Sound.flashlightFlicker, transform.position);
                 }
