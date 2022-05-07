@@ -24,11 +24,12 @@ using UnityEngine;
             increaseBattery,
             decreaseBattery,
             shaking,
-            flashlightFlicker
+            flashlightFlicker,
+            taskFinish
         }
 
         private static Dictionary<Sound, float> soundTimerDictionary;
-
+        private static Dictionary<Sound, float> soundVolumeDictionary;
         public static void Initialize()
         {
             soundTimerDictionary = new Dictionary<Sound, float>();
@@ -38,6 +39,9 @@ using UnityEngine;
             soundTimerDictionary[Sound.shaking] = 0;
             soundTimerDictionary[Sound.flashlightFlicker] = 0;
             soundTimerDictionary[Sound.healing] = 0;
+            
+            soundVolumeDictionary = new Dictionary<Sound, float>();
+            soundVolumeDictionary[Sound.healing] = 0.25f;
         }
         
         // generate a gameobject in random position and add audioSource component to it and play the required audio
@@ -48,6 +52,7 @@ using UnityEngine;
                 GameObject soundGameObject = new GameObject("Sound");
                 AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
                 audioSource.clip = GetAudioClip(sound);
+                audioSource.volume = soundVolumeDictionary.ContainsKey(sound) ? soundVolumeDictionary[sound] : 1f;
                 audioSource.Play();
                 Object.Destroy(soundGameObject, audioSource.clip.length);
             }
@@ -67,6 +72,7 @@ using UnityEngine;
                 audioSource.spatialBlend = 1f;
                 audioSource.rolloffMode = AudioRolloffMode.Linear;
                 audioSource.dopplerLevel = 0f;
+                audioSource.volume = soundVolumeDictionary.ContainsKey(sound) ? soundVolumeDictionary[sound] : 1f;
                 audioSource.Play();
                 // destroy the game object when it is finished playing audio
                 Object.Destroy(soundGameObject, audioSource.clip.length);

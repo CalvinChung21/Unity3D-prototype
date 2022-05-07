@@ -73,30 +73,12 @@ public class RandomTimeSpawner : MonoBehaviour
             SpawnTransform.z = transform.position.z + Random.Range(-5, 5);
             currentObject = Instantiate(prefab, SpawnTransform, prefab.transform.rotation);
             SoundManager.PlaySound(SoundManager.Sound.hello, currentObject.gameObject.transform.position);
-            StartCoroutine(SelfDestruct(currentObject));
         }
     
         //Sets the random time between minTime and maxTime
         void SetRandomTime()
         {
             spawnTime = Random.Range(minTime, maxTime);
-        }
-    
-        IEnumerator SelfDestruct(GameObject obj)
-        {
-            yield return new WaitForSeconds(7f);
-            if (obj != null)
-            {
-                SoundManager.PlaySound(SoundManager.Sound.evilLaugh, obj.transform.position);
-                if (Flashlight.FlashlightActive)
-                {
-                    Flashlight.setBatteries(1f);
-                    Flashlight.flicker = true;
-                    HealthBarFade.Damage();
-                    SoundManager.PlaySound(SoundManager.Sound.flashlightFlicker, transform.position);
-                }
-                Destroy(obj);
-            }
         }
     }
 

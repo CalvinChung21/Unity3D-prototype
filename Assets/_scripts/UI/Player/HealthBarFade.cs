@@ -58,6 +58,8 @@ public class HealthBarFade : MonoBehaviour
         // when player's health reaches 0
         if(healthSystem.GetHealthNormalized() == 0)
         {
+            LevelState.GameLose = true;
+            
             //change to Game Over Scene
             SceneManager.LoadScene("GameLose");
         }

@@ -123,9 +123,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4647864184723872566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e6d6ebe3709ed44b5bddc7e0c8c8b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bd32701259707e41bba713b0a54072d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4647864184723872568}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: CollectNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ID: 0
 --- !u!111 &4647864184723872569
 Animation:
   m_ObjectHideFlags: 0

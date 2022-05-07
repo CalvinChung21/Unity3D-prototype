@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &80742394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sounds dangerous...
+  m_Text: People just keep coming to this forest and "disappear".
 --- !u!222 &80742395
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -199,8 +199,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 200}
+  m_AnchoredPosition: {x: -50, y: 600}
+  m_SizeDelta: {x: 2500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &193042146
 GameObject:
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -253,7 +253,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: He feels dead inside......
+  m_Text: Many people just wandering
 --- !u!222 &193042148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ PlayableDirector:
   m_GameObject: {fileID: 353868097}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -334,8 +334,6 @@ PlayableDirector:
     value: {fileID: 193042146}
   - key: {fileID: 1955523273843941349, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
     value: {fileID: 1908982654}
-  - key: {fileID: 128134356081905623, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
-    value: {fileID: 0}
   - key: {fileID: -6015424472856442815, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
     value: {fileID: 1864383465}
   - key: {fileID: 1875528852212888848, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
@@ -366,7 +364,127 @@ PlayableDirector:
     value: {fileID: 1912062519}
   - key: {fileID: 1943804507328666066, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
     value: {fileID: 694164295}
-  - key: {fileID: -6814273061553002310, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
+  - key: {fileID: -7293024503577116860, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
+    value: {fileID: 1788983616}
+  - key: {fileID: -8100448657115052878, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
+    value: {fileID: 684878426}
+  - key: {fileID: 5687292214030302263, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1580441261329062894, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3475482874185023523, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4572293030838872944, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1627977350846609118, guid: c2e483005a0ae934c8b732e74aa36975, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -9086360151676226720, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 2115426241}
+  - key: {fileID: 2836906137787997601, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1824720944}
+  - key: {fileID: -6097692818792516446, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 371758593}
+  - key: {fileID: 8525535305804643707, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1652965332}
+  - key: {fileID: -5133686790943266483, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 460800285}
+  - key: {fileID: -4661246270571583119, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 193042146}
+  - key: {fileID: -2192191592655734540, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1908982654}
+  - key: {fileID: -2357526967365111470, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1864383465}
+  - key: {fileID: 1003080435178784004, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1788983616}
+  - key: {fileID: -2270522024306747322, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 684878426}
+  - key: {fileID: -1136874876078639940, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1250959898}
+  - key: {fileID: -5591808634201670366, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1572813342231546926, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5188319943208131895, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1301714938}
+  - key: {fileID: 1952765093091226031, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1670911378}
+  - key: {fileID: -2629755408557983277, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1385445814}
+  - key: {fileID: 4747884029778546152, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1315838707}
+  - key: {fileID: 8815875051586095168, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 2030407117}
+  - key: {fileID: -9218740245104929335, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 80742393}
+  - key: {fileID: 1393762767502748695, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 437040253}
+  - key: {fileID: -3219695017786302510, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 421751902}
+  - key: {fileID: -6858016590623974028, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 682691271}
+  - key: {fileID: -3199713108837002913, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 806389309}
+  - key: {fileID: 2720117343111735947, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1912062519}
+  - key: {fileID: -5934877464104299371, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 694164295}
+  - key: {fileID: 7065748814056713421, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 1440397119}
+  - key: {fileID: -5531311153184145094, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 6855813573413342257, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 6107520276073438852, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5587653526678283406, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7489293453698969739, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2746433724400021322, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 6646611735427333324, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4285565060851464218, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4220225271388652314, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5151515424277621859, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1488763139188798082, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8612423590610441878, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2808957566637752144, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7044663950968801332, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5555207034668331711, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7652912016632453564, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1890948051129393028, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2367131534226137024, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4677434094893583159, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2804926499915012303, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -8316656831576362050, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1173220042079427369, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -8059657669018766657, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1720720549924452508, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3975855606623654596, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3062666914596203493, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -873157106013581954, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7742408725179622294, guid: eaccc50839c409f4ca7627383bfbe16a, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
@@ -399,15 +517,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScaleFactor: 0.67
+  m_ReferenceResolution: {x: 3840, y: 2160}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
+  m_PhysicalUnit: 1
+  m_FallbackScreenDPI: 0
+  m_DefaultSpriteDPI: 1
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
 --- !u!223 &353868101
@@ -458,11 +576,15 @@ RectTransform:
   - {fileID: 1315838710}
   - {fileID: 2030407118}
   - {fileID: 80742396}
+  - {fileID: 1440397122}
   - {fileID: 437040256}
   - {fileID: 421751905}
   - {fileID: 682691274}
   - {fileID: 806389312}
   - {fileID: 1912062522}
+  - {fileID: 1788983619}
+  - {fileID: 684878429}
+  - {fileID: 1041968437}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -502,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -522,7 +644,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A man who don't know what to do with his life.
+  m_Text: Making wrong choices in life
 --- !u!222 &371758595
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -548,7 +670,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -396, y: 66}
-  m_SizeDelta: {x: 1750, y: 200}
+  m_SizeDelta: {x: 2500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &421751902
 GameObject:
@@ -567,7 +689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &421751903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,7 +711,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -601,10 +723,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Why don''t you say it earlier?
-
-    Life won''t be exiciting without doing
-    dangerous thing.'
+  m_Text: Okay, I will do my duty and help those people out with the help of my book.
 --- !u!222 &421751904
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -625,12 +744,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 353868102}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2500, y: 300}
+  m_AnchoredPosition: {x: 200, y: -700}
+  m_SizeDelta: {x: 3000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &437040253
 GameObject:
@@ -649,7 +768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &437040254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,7 +790,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -683,10 +802,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Yes, but the risk and reward both exist at the same time.
-
-    I heard
-    that the payment you get can be used to cover all of your debt.'
+  m_Text: You are there to prevent those people from going to "heaven".
 --- !u!222 &437040255
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -707,12 +823,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 353868102}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2000, y: 500}
+  m_AnchoredPosition: {x: 0, y: 450}
+  m_SizeDelta: {x: 3000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &460800285
 GameObject:
@@ -765,7 +881,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: There is nothing that can spark his interest.
+  m_Text: Feeling Desperate and Depressed
 --- !u!222 &460800287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -891,9 +1007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e008bb421b580b4c9af438fd3acae98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  narrativeBgm: {fileID: 8300000, guid: bd1ecb386d98730429daf7eb4327c85a, type: 3}
-  gameLoseBgm: {fileID: 8300000, guid: 65ae33a983ba51d409532137880a227e, type: 3}
-  bgm: {fileID: 8300000, guid: 0e45c511da9638449af4e8e1add3635a, type: 3}
 --- !u!114 &543660047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,7 +1153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &682691272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,7 +1175,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -1074,8 +1187,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Okay, you need to investigate the dark forest so it is better for you to
-    bring your equipment along the way.
+  m_Text: Great, you should bring a flashlight just in case anything happens.
 --- !u!222 &682691273
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1096,12 +1208,87 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 353868102}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 104.29614, y: 79.69348}
-  m_SizeDelta: {x: 2000, y: 400}
+  m_AnchoredPosition: {x: 150, y: 500}
+  m_SizeDelta: {x: 3000, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &684878426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684878429}
+  - component: {fileID: 684878428}
+  - component: {fileID: 684878427}
+  m_Layer: 5
+  m_Name: playerIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &684878427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684878426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6f6f8f363110d4f489e0af0c5f01e218, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &684878428
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684878426}
+  m_CullTransparentMesh: 1
+--- !u!224 &684878429
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684878426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 353868102}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1350, y: -600}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &694164295 stripped
 GameObject:
@@ -1125,7 +1312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &806389310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,7 +1334,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -1159,7 +1346,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A flashlight and some flares should be enough.
+  m_Text: You know, this area has many spooky things.
 --- !u!222 &806389311
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1180,12 +1367,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 353868102}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1250, y: 250}
+  m_AnchoredPosition: {x: -250, y: 550}
+  m_SizeDelta: {x: 3000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &817290967
 GameObject:
@@ -1222,7 +1409,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3850, y: 2150}
+  m_SizeDelta: {x: 3840, y: 2160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817290969
 MonoBehaviour:
@@ -1261,6 +1448,105 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817290967}
+  m_CullTransparentMesh: 1
+--- !u!1 &1041968436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1041968437}
+  - component: {fileID: 1041968440}
+  - component: {fileID: 1041968439}
+  - component: {fileID: 1041968438}
+  m_Layer: 5
+  m_Name: Skip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1041968437
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041968436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 353868102}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1376, y: 927}
+  m_SizeDelta: {x: 1500, y: 163.6711}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1041968438
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041968436}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1041968439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041968436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Press -SpaceBar- to Skip >>
+--- !u!222 &1041968440
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041968436}
   m_CullTransparentMesh: 1
 --- !u!1 &1250959898
 GameObject:
@@ -1301,12 +1587,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 100
+    m_MaxSize: 200
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1338,8 +1624,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 750, y: 200}
+  m_AnchoredPosition: {x: -850, y: 400}
+  m_SizeDelta: {x: 1500, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1301714938
 GameObject:
@@ -1380,19 +1666,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 100
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "What's wrong? \nBoss? I am just waking up....."
+  m_Text: What's wrong? Boss? I am just waking up.....
 --- !u!222 &1301714940
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1417,8 +1703,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1700, y: 400}
+  m_AnchoredPosition: {x: 400, y: -750}
+  m_SizeDelta: {x: 3000, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1315838707
 GameObject:
@@ -1437,7 +1723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1315838708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1459,7 +1745,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -1471,10 +1757,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'But this is not a place I would recommand to a security guard.
-
-    However,
-    I believe you can tackle this task.'
+  m_Text: Right, it is sad but this is our way of doing things.
 --- !u!222 &1315838709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1499,7 +1782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -150, y: 450}
   m_SizeDelta: {x: 2000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1385445814
@@ -1519,7 +1802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1385445815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,7 +1824,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -1553,12 +1836,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'For real?
-
-    Nice, finally has some income to pay my bills.
-
-    So
-    where is this place?'
+  m_Text: Well, that means there are people who are feeling lost.
 --- !u!222 &1385445816
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1583,8 +1861,87 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -100, y: -800}
   m_SizeDelta: {x: 2500, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1440397119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1440397122}
+  - component: {fileID: 1440397121}
+  - component: {fileID: 1440397120}
+  m_Layer: 5
+  m_Name: Text15.5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1440397120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440397119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Every people in our society is valuable and we can't lose them.
+--- !u!222 &1440397121
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440397119}
+  m_CullTransparentMesh: 1
+--- !u!224 &1440397122
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440397119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 353868102}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -25, y: 600}
+  m_SizeDelta: {x: 2500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1652965332
 GameObject:
@@ -1617,7 +1974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1637,7 +1994,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wandering in the forest......
+  m_Text: The world isn't as ideal as we think of
 --- !u!222 &1652965334
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1662,8 +2019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 415, y: -116}
-  m_SizeDelta: {x: 1500, y: 150}
+  m_AnchoredPosition: {x: 0, y: -116}
+  m_SizeDelta: {x: 3500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1670911378
 GameObject:
@@ -1704,19 +2061,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 100
+    m_MaxSize: 150
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Good news for you, \nyou have job to do."
+  m_Text: Good news for you, you have job to do.
 --- !u!222 &1670911380
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1741,8 +2098,83 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1750, y: 500}
+  m_AnchoredPosition: {x: -350, y: 450}
+  m_SizeDelta: {x: 3000, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1788983616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1788983619}
+  - component: {fileID: 1788983618}
+  - component: {fileID: 1788983617}
+  m_Layer: 5
+  m_Name: bossIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1788983617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788983616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 919a376af8cbe584c955b89be830af95, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1788983618
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788983616}
+  m_CullTransparentMesh: 1
+--- !u!224 &1788983619
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788983616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 353868102}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1327, y: 631}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1824720944
 GameObject:
@@ -1775,7 +2207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1795,7 +2227,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: In the woods
+  m_Text: Having no direction in life
 --- !u!222 &1824720946
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1821,7 +2253,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -9, y: 331}
-  m_SizeDelta: {x: 500, y: 150}
+  m_SizeDelta: {x: 2000, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1864383465
 GameObject:
@@ -1946,7 +2378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1966,7 +2398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: He is stuck in the forest and nerver come back......
+  m_Text: What should we live for in this world......
 --- !u!222 &1908982656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2011,7 +2443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1912062520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,7 +2465,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -2045,7 +2477,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Got it, will report to you when I finish the task.
+  m_Text: Got it, boss I will be careful and will talk to you soon.
 --- !u!222 &1912062521
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2066,12 +2498,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 353868102}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1250, y: 250}
+  m_AnchoredPosition: {x: -150, y: -700}
+  m_SizeDelta: {x: 3000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1944826794
 GameObject:
@@ -2156,7 +2588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2030407118
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2173,7 +2605,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -300, y: 400}
   m_SizeDelta: {x: 2750, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030407119
@@ -2197,7 +2629,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: abcd2c3d4aaafb540b7331732a28960e, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
@@ -2209,12 +2641,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The place you are going to go is very well known.
-
-    But not in a good
-    way.
-
-    It is a forest where many people go in and never come out.
+  m_Text: 'You are living there for free for a reason.
 
 '
 --- !u!222 &2030407120
@@ -2276,7 +2703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2296,7 +2723,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Feeling lost......
+  m_Text: Feeling lost
 --- !u!222 &2115426244
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2322,7 +2749,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -13, y: 508}
-  m_SizeDelta: {x: 741.373, y: 163.6711}
+  m_SizeDelta: {x: 1500, y: 163.6711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &5978966237307901544
 PrefabInstance:

@@ -6,7 +6,7 @@ using UnityEngine;
         public delegate void EnemyKilled();
         public static event EnemyKilled OnEnemyKilled;
         
-        public bool stopPathFinding;
+        
 
         [SerializeField] Animator _animator;
         
@@ -27,6 +27,8 @@ using UnityEngine;
             m_RightFist.GetComponent<SphereCollider>().enabled = false;
         }
         
+        public bool isCoroutineStarted = false;
+        public bool stopPathFinding;
         private void Awake()
         {
             // health = maxHealth;
@@ -38,12 +40,10 @@ using UnityEngine;
         private void Update()
         {
             Attack();
-
-            if (stopPathFinding)
+            if (!isCoroutineStarted && stopPathFinding)
+            {
                 StartCoroutine(recoverFromStopState());
-            else
-                StopCoroutine(recoverFromStopState());
-            
+            }
         }
 
         private void Attack()
@@ -57,9 +57,11 @@ using UnityEngine;
         
         IEnumerator recoverFromStopState()
         {
+            isCoroutineStarted = true;
             yield return new WaitForSeconds(5);
             _animator.SetBool("Hit", false);
             stopPathFinding = false;
+            isCoroutineStarted = false;
         }
 
         // float CalculateHealth()

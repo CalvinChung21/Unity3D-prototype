@@ -9,7 +9,6 @@ public class SafeZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter");
         if (other.gameObject.layer == 8)
         {
             safe = true;
@@ -18,7 +17,6 @@ public class SafeZone : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Leave");
         if (other.gameObject.layer == 8)
         {
             safe = false;

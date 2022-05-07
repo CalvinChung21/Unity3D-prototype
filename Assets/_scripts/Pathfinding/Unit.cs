@@ -129,62 +129,54 @@ public class Unit : MonoBehaviour {
 		    {
 			    target = gameObject.transform;
 		    }
-		    else if(gameObject.tag == "NPC" || gameObject.tag == "LightSeeker")
+		    else if(gameObject.tag == "NPC" && !gameObject.GetComponent<Ghost>().stopPathFinding)
 		    {
 			    target = GameObject.Find("FlareThrew(Clone)")!=null
 				    ? GameObject.Find("FlareThrew(Clone)").transform
 				    : GameObject.Find("FPSController").transform;
 		    }
 	    
-		    if (target.tag == "Glowstick")
+		    if (GameObject.Find("FlareThrew(Clone)")!=null)
 		    {
 			    Patrol.patrolOn = false;
 		    }
-		    
-	    }
-	    
 
-    // if (gameObject.tag == "NPC" && !gameObject.GetComponent<Ghost>().stopPathFinding)
-        // {
-        //     if (target.hasChanged)
-        //     {
-        //         PathRequestManager.RequestPath(new PathRequest(transform.position,target.position, OnPathFound) );
-        //         target.hasChanged = false;
-        //     }
-        // }
-        //
-        // if (target.tag == "Glowstick")
-        // {
-        //     Patrol.patrolOn = false;
-        // }
-        
-        // if (gameObject.tag != "NPC" &&!Patrol.patrolOn)
-        // {
-        //     if (target.hasChanged)
-        //     {
-        //         PathRequestManager.RequestPath(new PathRequest(transform.position,target.position, OnPathFound));
-        //         target.hasChanged = false;
-        //     }
-        // }
+		    if (Patrol.patrolOn == false && gameObject.tag == "LightSeeker")
+		    {
+			    target = GameObject.Find("FlareThrew(Clone)")!=null
+				    ? GameObject.Find("FlareThrew(Clone)").transform
+				    : GameObject.Find("FPSController").transform;
+		    }
+
+		    if (Patrol.patrolOn && gameObject.tag == "LightSeeker")
+		    {
+			    target = gameObject.transform;
+		    }
+
+	    }
     }
     
     IEnumerator UpdatePath() {
         if (Time.timeSinceLevelLoad < .3f) {
             yield return new WaitForSeconds (.3f);
         }
-        
-        PathRequestManager.RequestPath (new PathRequest(transform.position, target.position, OnPathFound));
+
+        if (target != null)
+        {
+	        PathRequestManager.RequestPath (new PathRequest(transform.position, target.position, OnPathFound));
     
-        float sqrMoveThreshold = pathUpdateMoveThreshold * pathUpdateMoveThreshold;
-        Vector3 targetPosOld = target.position;
+	        float sqrMoveThreshold = pathUpdateMoveThreshold * pathUpdateMoveThreshold;
+	        Vector3 targetPosOld = target.position;
     
-        while (true) {
-            yield return new WaitForSeconds (minPathUpdateTime);
-            if ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshold) {
-                PathRequestManager.RequestPath (new PathRequest(transform.position, target.position, OnPathFound));
-                targetPosOld = target.position;
-            }
+	        while (true) {
+		        yield return new WaitForSeconds (minPathUpdateTime);
+		        if ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshold) {
+			        PathRequestManager.RequestPath (new PathRequest(transform.position, target.position, OnPathFound));
+			        targetPosOld = target.position;
+		        }
+	        }
         }
+        
     }
     
     IEnumerator FollowPath() {

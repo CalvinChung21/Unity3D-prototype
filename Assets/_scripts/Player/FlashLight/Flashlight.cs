@@ -57,6 +57,7 @@ using Random = UnityEngine.Random;
         // float lerpSpeed;
         private void Start()
         {
+            _currentBatteries = 2.5f;
             rend = gameObject.GetComponent<MeshRenderer>();
         }
     
@@ -69,14 +70,17 @@ using Random = UnityEngine.Random;
                 Lights.SetActive(true);
                 Patrol.patrolOn = false;
             }
-            else if(!flicker)
+            else if(_currentBatteries < 0 && !flicker)
             {
                 flashlightActive = false;
                 Lights.SetActive(false);
-                Patrol.patrolOn = true;
+                if (GameObject.Find("FlareThrew(Clone)") == null)
+                {
+                    Patrol.patrolOn = true;
+                }
             }
 
-            AdjustEmissionOfTheFlashlight();
+            // AdjustEmissionOfTheFlashlight();
 
             if (Input.GetMouseButton(0) && !flicker)
             {
@@ -108,13 +112,13 @@ using Random = UnityEngine.Random;
             }
         }
 
-        void AdjustEmissionOfTheFlashlight()
-        {
-            Color color = new Color(172, 191, 144);
-            intensity = Mathf.Lerp(0, 0.025f, _currentBatteries);
-            rend.material.EnableKeyword("_Emission");
-            rend.material.SetColor("_EmissionColor", color * intensity);
-        }
+        // void AdjustEmissionOfTheFlashlight()
+        // {
+        //     Color color = new Color(172, 191, 144);
+        //     intensity = Mathf.Lerp(0, 0.001f, _currentBatteries);
+        //     rend.material.EnableKeyword("_Emission");
+        //     rend.material.SetColor("_EmissionColor", color * intensity);
+        // }
         
         public void Shake()
         {
@@ -125,7 +129,7 @@ using Random = UnityEngine.Random;
             }
         }
         
-        public float shake_decay = 0.0002f;
+        public float shake_decay = 0.01f;
         public float shake_intensity = 0.01f;
         private float temp_shake_intensity = 0;
         public bool isShaking = false;
@@ -138,8 +142,15 @@ using Random = UnityEngine.Random;
                 
                 transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, new Vector3(0,0, 75), Time.deltaTime*5.0f);
                 temp_shake_intensity -= shake_decay;
-
-                _currentBatteries += shake_decay*10;
+                if (_currentBatteries < _maxBatteryCount)
+                {
+                    _currentBatteries += shake_decay*5;
+                }
+                else
+                {
+                    _currentBatteries = _maxBatteryCount;
+                }
+                
                 SoundManager.PlaySound(SoundManager.Sound.shaking);
             }else
             {

@@ -41,7 +41,7 @@ public class MenuButton : MonoBehaviour
         if (thisIndex == 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }else if (thisIndex == 2)
+        }else if (thisIndex == 1)
         {
             Application.Quit();
         }

@@ -81,6 +81,8 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: 3687c90ee5f7c744aaba86bbcfd1080e, type: 3}
   - sound: 17
     AudioClip: {fileID: 8300000, guid: 0a1dbffdea37693468e67a4892efc107, type: 3}
+  - sound: 18
+    AudioClip: {fileID: 8300000, guid: d9c07483a58343041a8372abb153c81d, type: 3}
 --- !u!252 &1149626606616162205
 SurfaceEffector2D:
   m_ObjectHideFlags: 0

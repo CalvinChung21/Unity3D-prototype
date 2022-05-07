@@ -6,7 +6,15 @@ public class NextLevel : MonoBehaviour
 {
    private void OnEnable()
    {
-      LevelState.Level+=1;
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      if (LevelState.Level != 10)
+      {
+         LevelState.Level+=1;
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      }
+      else
+      {
+         LevelState.Level = 0;
+         SceneManager.LoadScene("_scenes/Menu/Menu");
+      }
    }
 }

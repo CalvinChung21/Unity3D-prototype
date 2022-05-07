@@ -4,7 +4,7 @@ using UnityEngine;
     {
         // counting the number of hopeless guy
         private static int countHopeless;
-
+        
         public static void setCountHopeless(int val)
         {
             countHopeless = val;
@@ -19,4 +19,5 @@ using UnityEngine;
         {
             return countHopeless;
         }
+        
     }

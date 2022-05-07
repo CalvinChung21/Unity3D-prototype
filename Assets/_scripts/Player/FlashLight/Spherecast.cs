@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Spherecast : MonoBehaviour
     {
@@ -29,6 +30,12 @@ public class Spherecast : MonoBehaviour
     private float multiplier = 0.5f;
     public static float t = 0;
 
+    // for interactive system
+    public Image interactImage;
+    public Sprite defaultCursorIcon;
+    public Sprite grabIcon;
+
+    public Text text;
     // Update is called once per frame
     void Update()
     {
@@ -49,13 +56,43 @@ public class Spherecast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(origin, direction, out hit, 3, layerMask))
         {
-            if (hit.collider.GetComponent<Interactable>() != false)
+            if (hit.collider.GetComponent<Interactable>() != false && hit.transform.gameObject.tag == "Note")
             {
+                interactImage.sprite = grabIcon;
+                text.text = "Press [E] to Grab";
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.GetComponent<Interactable>().onInteract.Invoke();
                 }
+                
             }
+            
+            if (hit.collider.GetComponent<Interactable>() != false && hit.transform.gameObject.tag == "PeopleToSave" && hit.transform.gameObject.GetComponent<Hopeless>().savedAndHopeful == false)
+            {
+                interactImage.sprite = grabIcon;
+                if (LevelState.NotesNum > 0)
+                {
+                    text.text = "Press [E] to Save"; 
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        hit.collider.GetComponent<Interactable>().onInteract.Invoke();
+                    }
+                }
+                else
+                {
+                    text.text = "Not Enough Notes";
+                }
+            }
+            
+        }else if(!Flashlight.FlashlightActive)
+        {
+            interactImage.sprite = defaultCursorIcon;
+            text.text = "Left Mouse Click to Recharge";
+        }
+        else
+        {
+            interactImage.sprite = defaultCursorIcon;
+            text.text = "";
         }
     }
     
@@ -104,6 +141,7 @@ public class Spherecast : MonoBehaviour
             {
                 SoundManager.PlaySound(SoundManager.Sound.who);
                 currentHitObject.GetComponent<Ghost>().stopPathFinding = true;
+                currentHitObject.GetComponent<Ghost>().isCoroutineStarted = false;
                 currentHitObject.GetComponent<Animator>().SetBool("Hit", true);
             }
         }
@@ -111,7 +149,7 @@ public class Spherecast : MonoBehaviour
         else if (currentHitObject.tag == "HelloGuy" && currentHitObject.GetComponent<SkinnedMeshRenderer>()!=null)
         {
             // StartCoroutine(FadeOutMaterial(0.1f, currentHitObject));
-            if (t < 150)
+            if (t < 85)
             {
                 Color colour = currentHitObject.GetComponent<SkinnedMeshRenderer>().material.GetColor("_EmissionColor");
                 colour *= 1.1f;

@@ -37,7 +37,7 @@ public class Patrol : MonoBehaviour
         if (patrolOn)
         {
             t = 1;
-            glowingColor = colour * 9.9f;
+            glowingColor = colour;
             model.GetComponent<SkinnedMeshRenderer>().material.SetColor("_EmissionColor", colour);
             transform.position = Vector3.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
@@ -56,7 +56,7 @@ public class Patrol : MonoBehaviour
         }
         else
         {
-            if (t < 50)
+            if (t < 120)
             {
                 t += 1;
                 glowingColor *= 1.1f;

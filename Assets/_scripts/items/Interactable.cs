@@ -21,4 +21,18 @@ public class Interactable : MonoBehaviour
       SoundManager.PlaySound(SoundManager.Sound.grab, gameObject.transform.position);
       Destroy(gameObject);
    }
+
+   public void SaveHopeless()
+   {
+      if (LevelState.NotesNum > 0)
+      {
+         GetComponentInChildren<SkinnedMeshRenderer>().material.EnableKeyword("_EMISSION");
+         GetComponent<Hopeless>().savedAndHopeful = true;
+         LevelState.NotesNum--;
+         SoundManager.PlaySound(SoundManager.Sound.thankYou, gameObject.transform.position);
+         HopelessInfo.changeCountHopeless(-1);
+         GetComponent<AudioSource>().Stop();
+      }
+      
+   }
 }

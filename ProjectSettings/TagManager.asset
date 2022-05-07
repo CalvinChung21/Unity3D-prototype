@@ -12,6 +12,7 @@ TagManager:
   - PeopleToSave
   - LightSeeker
   - Note
+  - SafeZone
   layers:
   - Default
   - TransparentFX

@@ -19,18 +19,7 @@ public class Hopeless : MonoBehaviour
 
         private void OnCollisionEnter(Collision collision)
         {
-            #region saving the hopeless guy with note
-            if (collision.gameObject.tag == "MainCamera" && LevelState.NotesNum > 0 && !savedAndHopeful)
-            {
-                GetComponentInChildren<SkinnedMeshRenderer>().material.EnableKeyword("_EMISSION");
-                    
-                savedAndHopeful = true;
-                LevelState.NotesNum--;
-                SoundManager.PlaySound(SoundManager.Sound.thankYou, gameObject.transform.position);
-                HopelessInfo.changeCountHopeless(-1);
-            }
-            #endregion
-        
+
             #region touching the hopeful guy will increase the battery percentage of the player
             if(collision.gameObject.tag == "MainCamera" && savedAndHopeful)
             {
@@ -39,7 +28,7 @@ public class Hopeless : MonoBehaviour
             }
             #endregion
         }
-
+        
         private void Update()
         {
             if (savedAndHopeful)
