@@ -35283,8 +35283,7 @@ PrefabInstance:
       propertyPath: savePoint
       value: 
       objectReference: {fileID: 2133587494}
-    m_RemovedComponents:
-    - {fileID: 5953433459592717725, guid: da0d3742fb540d548ae2633616667bea, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da0d3742fb540d548ae2633616667bea, type: 3}
 --- !u!4 &1976612537 stripped
 Transform:
